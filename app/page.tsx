@@ -1,10 +1,5 @@
 // src/app/page.js
-"use client"; // Necesario para usar useRouter en App Router
-import { useRouter } from 'next/navigation';
-
 export default function Home() {
-  const router = useRouter();
-
   return (
     <main className="font-sans text-white bg-black">
 
@@ -14,13 +9,19 @@ export default function Home() {
           <img src="/logo.png" alt="Run4Fun Logo" className="h-15" />
         </a>
         <nav className="flex gap-5 font-bold uppercase">
-          {["Evento", "Radio", "App", "Documentos"].map((item) => (
+          {[
+            { label: "Evento", href: "#evento" },
+            { label: "Tienda", href: "/tienda" }, // enlace a página externa
+            { label: "Radio", href: "#radio" },
+            { label: "App", href: "#app" },
+            { label: "Documentos", href: "#documentos" }
+          ].map((item) => (
             <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
+              key={item.label}
+              href={item.href}
               className="text-white no-underline hover:text-yellow-400 transition"
             >
-              {item}
+              {item.label}
             </a>
           ))}
         </nav>
@@ -39,14 +40,6 @@ export default function Home() {
           <p className="mt-3 text-xl md:text-2xl text-white drop-shadow-md">
             Corre, conecta tu música con tu ritmo y vive la experiencia Run4Fun
           </p>
-
-          {/* Botón hacia la tienda */}
-          <button
-            onClick={() => router.push('/tienda')}
-            className="mt-6 bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600 transition"
-          >
-            Ir a la tienda
-          </button>
         </div>
         <img
           src="/logo.png"
