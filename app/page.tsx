@@ -29,18 +29,25 @@ export default function Home() {
 
       {/* Hero Banner */}
       <section id="hero" style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        textAlign: 'center',
-        position: 'relative'
-      }}>
-        <video autoPlay loop muted style={{ position: 'absolute', width: '100%', height: '100%', objectFit: 'cover', zIndex: -1 }}>
-          <source src="/hero-video.mp4" type="video/mp4" />
-          Tu navegador no soporta videos.
-        </video>
-        <div>
+  height: '100vh',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  textAlign: 'center',
+  position: 'relative',
+  backgroundImage: 'url("/banner.jpg")', // <-- tu imagen aquí
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat'
+}}>
+  <div style={{ backgroundColor: 'rgba(0,0,0,0.4)', padding: '20px', borderRadius: '10px' }}>
+    <h1 style={{ fontSize: '4rem', fontWeight: 'bold', color: 'white', textShadow: '2px 2px 6px black' }}>Run4Fun</h1>
+    <p style={{ fontSize: '1.5rem', color: 'white', textShadow: '1px 1px 3px black' }}>
+      Corre, conecta tu música con tu ritmo y vive la experiencia Run4Fun
+    </p>
+  </div>
+  <img src="/logo.png" alt="Logo secundario" style={{ position: 'absolute', top: '20px', right: '20px', height: '40px' }} />
+</section>
           <h1 style={{ fontSize: '4rem', fontWeight: 'bold', textShadow: '2px 2px 6px black' }}>Run4Fun</h1>
           <p style={{ fontSize: '1.5rem', textShadow: '1px 1px 3px black' }}>
             Corre, conecta tu música con tu ritmo y vive la experiencia transmedia Run4Fun
