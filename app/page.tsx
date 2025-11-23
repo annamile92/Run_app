@@ -19,6 +19,20 @@ export default function Home() {
           ))}
         </nav>
       </header>
+import Link from 'next/link';
+
+export default function Home() {
+  return (
+    <div className="p-6 text-center">
+      <h1 className="text-4xl font-bold mb-6">Bienvenido a RunForFun</h1>
+      <Link href="/tienda">
+        <button className="bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600 transition">
+          Ir a la tienda
+        </button>
+      </Link>
+    </div>
+  );
+}
 
       {/* Hero Banner */}
       <section
