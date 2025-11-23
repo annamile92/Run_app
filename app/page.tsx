@@ -13,7 +13,7 @@ export default function Home() {
         justifyContent: 'space-between',
         alignItems: 'center',
         zIndex: 50,
-        backgroundColor: 'rgba(0,0,0,0.3)'
+        backgroundColor: 'rgba(0,0,0,0.8)'
       }}>
         <a href="/">
           <img src="/logo.png" alt="Run4Fun Logo" style={{ height: '60px' }} />
@@ -52,4 +52,53 @@ export default function Home() {
       {/* Justificación del Proyecto */}
       <section id="proyecto" style={{ padding: '120px 20px 80px', textAlign: 'center', backgroundColor: '#111' }}>
         <h2 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '20px' }}>¿Por qué Run4Fun?</h2>
-        <p style={{ maxWidth: '800px', margin: '0 auto', fontSize: '1.2rem', lineHeight: '1.8rem' }}>   </p>
+        <p style={{ maxWidth: '800px', margin: '0 auto', fontSize: '1.2rem', lineHeight: '1.8rem' }}>
+          Run4Fun es un ecosistema transmedia que une investigación social, antropología y diseño de experiencias.
+          Conecta tu cuerpo, tu entorno y tus relaciones mientras corres, con música sincronizada a tu ritmo cardíaco.
+          Todo esto en un entorno tipo festival, lleno de energía, comunidad y creatividad.
+        </p>
+      </section>
+
+      {/* Tienda */}
+      <section id="tienda" style={{ padding: '100px 20px', textAlign: 'center', backgroundColor: '#111' }}>
+        <h2 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '15px' }}>Tienda</h2>
+        <p style={{ fontSize: '1.2rem' }}>Productos y accesorios oficiales para vivir Run4Fun al máximo.</p>
+      </section>
+
+      {/* Radio */}
+      <section id="radio" style={{ padding: '100px 20px', textAlign: 'center', backgroundColor: '#222' }}>
+        <h2 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '15px' }}>Radio Run4Fun</h2>
+        <p style={{ fontSize: '1.2rem' }}>Escucha playlists sincronizadas con tus latidos y sumérgete en el ecosistema del evento.</p>
+      </section>
+
+      {/* Video App */}
+      <section id="app" style={{ padding: '100px 20px', textAlign: 'center', backgroundColor: '#333' }}>
+        <h2 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '20px' }}>App Run4Fun</h2>
+        <video controls style={{ maxWidth: '600px', width: '100%', borderRadius: '10px', boxShadow: '0 0 20px rgba(0,0,0,0.5)' }}>
+          <source src="/app-demo.mp4" type="video/mp4" />
+          Tu navegador no soporta videos.
+        </video>
+      </section>
+
+      {/* QR + Descarga */}
+      <section id="descarga" style={{ padding: '100px 20px', textAlign: 'center', backgroundColor: '#111' }}>
+        <h2 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '20px' }}>Descarga la App</h2>
+        <img src="/qr-code.png" alt="QR Run4Fun" style={{ width: '200px', height: '200px', marginBottom: '15px' }} />
+        <p style={{ fontSize: '1.2rem' }}>Escanea el QR y únete al ecosistema Run4Fun desde tu móvil.</p>
+      </section>
+
+      {/* Documentación */}
+      <section id="documentos" style={{ padding: '100px 20px', textAlign: 'center', backgroundColor: '#111' }}>
+        <h2 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '15px' }}>Documentación</h2>
+        <p style={{ fontSize: '1.2rem' }}>Guías, documentos y recursos de Run4Fun, para desarrolladores y participantes.</p>
+      </section>
+
+      {/* Footer */}
+      <footer style={{ padding: '60px 20px', textAlign: 'center', backgroundColor: 'black' }}>
+        <img src="/logo.png" alt="Run4Fun Logo" style={{ height: '50px', marginBottom: '10px' }} />
+        <p style={{ color: 'white', fontWeight: 'bold' }}>© 2025 Run4Fun. Todos los derechos reservados.</p>
+      </footer>
+
+    </main>
+  );
+}
