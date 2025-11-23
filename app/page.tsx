@@ -52,4 +52,4 @@ export default function Home() {
       {/* Justificación del Proyecto */}
       <section id="proyecto" style={{ padding: '120px 20px 80px', textAlign: 'center', backgroundColor: '#111' }}>
         <h2 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '20px' }}>¿Por qué Run4Fun?</h2>
-        <p style={{ maxWidth: '800px', margin: '0 auto', fontSize: '1.2rem', lineHeight: '1.8rem' }}>
+        <p style={{ maxWidth: '800px', margin: '0 auto', fontSize: '1.2rem', lineHeight: '1.8rem' }}>   </p>
