@@ -1,7 +1,10 @@
 // src/app/page.js
-import Link from 'next/link';
+"use client"; // Necesario para usar useRouter en App Router
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
+  const router = useRouter();
+
   return (
     <main className="font-sans text-white bg-black">
 
@@ -36,12 +39,14 @@ export default function Home() {
           <p className="mt-3 text-xl md:text-2xl text-white drop-shadow-md">
             Corre, conecta tu música con tu ritmo y vive la experiencia Run4Fun
           </p>
+
           {/* Botón hacia la tienda */}
-          <Link href="/tienda">
-            <button className="mt-6 bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600 transition">
-              Ir a la tienda
-            </button>
-          </Link>
+          <button
+            onClick={() => router.push('/tienda')}
+            className="mt-6 bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600 transition"
+          >
+            Ir a la tienda
+          </button>
         </div>
         <img
           src="/logo.png"
