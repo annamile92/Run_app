@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -51,11 +50,11 @@ export default function Home() {
       </nav>
 
       {/* HERO */}
-      <section className="relative flex justify-center items-center text-center h-screen mt-20 overflow-hidden bg-gradient-to-b from-gray-800 to-gray-900">
+      <section className="relative flex justify-center items-center text-center h-screen mt-20 overflow-hidden bg-section-gradient">
         <img src="/banner-run.gif" alt="Corredores" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
         <div className="relative z-10 px-6">
-          <h1 className="text-5xl font-extrabold mb-4">RunForFun</h1>
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-4">RunForFun</h1>
           <p className="text-xl max-w-2xl mx-auto">
             Corre, conecta tu música con tu ritmo y vive la experiencia RunForFun.
           </p>
@@ -63,9 +62,9 @@ export default function Home() {
       </section>
 
       {/* RADIO */}
-      <section id="radio" className="py-16 px-6 flex flex-col items-center bg-gradient-to-b from-gray-800 to-gray-900">
+      <section id="radio" className="py-16 px-6 flex flex-col items-center bg-section-gradient">
         <h2 className="text-3xl font-bold mb-6">🎧 Radio Live</h2>
-        <div className="reproductor-con-blur flex flex-col items-center bg-white/10 backdrop-blur-lg p-6 rounded-xl shadow-lg max-w-md w-full">
+        <div className="reproductor-con-blur flex flex-col items-center bg-white/20 backdrop-blur-lg p-6 rounded-xl shadow-lg max-w-md w-full">
           <p className="text-lg font-semibold mb-2">{playlist[currentIndex]?.title}</p>
           <p className="text-sm opacity-70 mb-4">
             BPM: {playlist[currentIndex]?.bpm} • Cadence: {playlist[currentIndex]?.cadence}
@@ -83,40 +82,31 @@ export default function Home() {
               <Image src="/siguiente.png" alt="Siguiente" width={40} height={40} />
             </button>
           </div>
-
-          <div className="mt-6 w-full">
-            <h3 className="font-semibold mb-2">Próximas pistas</h3>
-            <ol className="list-decimal list-inside text-sm text-gray-300">
-              {playlist.slice(currentIndex + 1, currentIndex + 6).map((p) => (
-                <li key={p.id}>{p.title} — {p.bpm} bpm</li>
-              ))}
-            </ol>
-          </div>
         </div>
       </section>
 
-      {/* CONTEXTO */}
-      <section id="evento" className="py-16 px-6 flex flex-col md:flex-row items-center bg-gradient-to-b from-gray-800 to-gray-900 gap-6">
+      {/* EVENTO */}
+      <section id="evento" className="py-16 px-6 flex flex-col md:flex-row items-center gap-6 bg-section-gradient">
         <div className="md:w-1/2">
           <img src="/evento.jpg" alt="Evento" className="rounded-lg shadow-md w-full" />
         </div>
         <div className="md:w-1/2 text-white">
           <h2 className="text-3xl font-bold mb-4">Contexto</h2>
           <p className="opacity-80 leading-relaxed">
-            En Medellín, el running ha crecido notablemente en los últimos años, pasando de ser una práctica individual de salud a convertirse en un fenómeno social. Cada vez más personas participan en grupos de corredores, carreras locales y entrenamientos colectivos. Más allá de los beneficios físicos, los corredores buscan compartir experiencias, motivarse mutuamente y generar vínculos sociales. El running ofrece una forma de encuentro natural, distinta a las dinámicas directas de las apps de citas o redes sociales, donde el ejercicio se convierte en un puente hacia la amistad y la comunidad.
+            En Medellín, el running ha crecido notablemente …
           </p>
         </div>
       </section>
 
       {/* APP */}
-      <section id="app" className="py-16 px-6 flex flex-col md:flex-row items-center bg-gradient-to-b from-gray-800 to-gray-900 gap-6">
+      <section id="app" className="py-16 px-6 flex flex-col md:flex-row items-center gap-6 bg-section-gradient">
         <div className="md:w-1/2">
           <img src="/1.png" alt="App" className="rounded-lg shadow-md w-full" />
         </div>
         <div className="md:w-1/2 text-white">
           <h2 className="text-3xl font-bold mb-4">App</h2>
           <p className="opacity-80 leading-relaxed">
-            Explora la experiencia RunForFun App. Descarga y conecta tu música y datos biométricos.
+            Explora la experiencia RunForFun App. …
           </p>
           <a href="https://object-volt-59393284.figma.site/" className="mt-4 inline-block text-green-400 font-semibold underline">
             Descargar App
@@ -125,22 +115,20 @@ export default function Home() {
       </section>
 
       {/* DOCUMENTOS */}
-      <section id="documentos" className="py-16 px-6 flex flex-col md:flex-row items-center bg-gradient-to-b from-gray-800 to-gray-900 gap-6">
+      <section id="documentos" className="py-16 px-6 flex flex-col md:flex-row items-center gap-6 bg-section-gradient">
         <div className="md:w-1/2">
           <img src="/documentos.png" alt="Documentos" className="rounded-lg shadow-md w-full" />
         </div>
         <div className="md:w-1/2 text-white flex flex-col gap-4">
           <h2 className="text-3xl font-bold mb-4">Documentos</h2>
           <p className="opacity-80">Documentos oficiales del proyecto RunForFun.</p>
-          
-          {/* BOTONES A ARCHIVOS */}
           <div className="flex gap-4 mt-4">
-            <a href="https://drive.google.com/archivo1" target="_blank" rel="noopener noreferrer">
+            <Link href="https://drive.google.com/archivo1" target="_blank" rel="noopener noreferrer">
               <Image src="/archivo.png" alt="Archivo 1" width={60} height={60} />
-            </a>
-            <a href="https://drive.google.com/archivo2" target="_blank" rel="noopener noreferrer">
+            </Link>
+            <Link href="https://drive.google.com/archivo2" target="_blank" rel="noopener noreferrer">
               <Image src="/archivo.png" alt="Archivo 2" width={60} height={60} />
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -156,6 +144,12 @@ export default function Home() {
           background-color: rgba(255, 255, 255, 0.2);
           backdrop-filter: blur(10px);
           -webkit-backdrop-filter: blur(10px);
+          border-radius: 10px;
+        }
+
+        /* Fondo tipo Figma: gradiente mesh / moderno */
+        .bg-section-gradient {
+          background: linear-gradient(135deg, #1f1c2c, #928DAB, #1F1C2C);
         }
       `}</style>
     </main>
