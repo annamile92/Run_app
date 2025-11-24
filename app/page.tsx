@@ -1,116 +1,117 @@
 "use client";
-
-import { useState, useRef } from "react";
 import Link from "next/link";
 
 export default function Home() {
-  const tracks = [
-    { title: "Runner Camila 152bpm", src: "/radio-tracks/runner_camila_152bpm.wav" },
-    { title: "Julián 144bpm", src: "/radio-tracks/julian_144bpm.wav" },
-    { title: "Cool Down 120bpm", src: "/radio-tracks/relax_120bpm.wav" },
-  ];
-
-  const [currentTrack, setCurrentTrack] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const audioRef = useRef(null);
-
-  const togglePlay = () => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    if (isPlaying) audio.pause();
-    else audio.play();
-    setIsPlaying(!isPlaying);
-  };
-
-  const nextTrack = () => {
-    setCurrentTrack((prev) => (prev + 1) % tracks.length);
-    setTimeout(() => audioRef.current?.play(), 100);
-    setIsPlaying(true);
-  };
-
-  const prevTrack = () => {
-    setCurrentTrack((prev) => (prev === 0 ? tracks.length - 1 : prev - 1));
-    setTimeout(() => audioRef.current?.play(), 100);
-    setIsPlaying(true);
-  };
-
-  const bpm = tracks[currentTrack]?.title.match(/(\d+)bpm/i)?.[1] || 0;
-
   return (
-    <main className="min-h-screen font-sans text-white bg-black">
+    <main className="font-sans text-white bg-black">
 
-      {/* Navbar */}
-      <nav className="fixed top-0 w-full bg-black/70 backdrop-blur-sm flex justify-center gap-8 py-4 z-50">
-        <Link href="/" className="hover:text-blue-400 transition">Home</Link>
-        <Link href="/evento" className="hover:text-blue-400 transition">Evento</Link>
-        <Link href="/proyecto" className="hover:text-blue-400 transition">Proyecto</Link>
-        <Link href="/radio" className="hover:text-blue-400 transition">Radio</Link>
-        <Link href="/tienda" className="hover:text-blue-400 transition">Tienda</Link>
-      </nav>
-
-      {/* Hero */}
-      <section className="relative flex flex-col items-center justify-center text-center h-screen mt-16 overflow-hidden">
-        <img
-          src="/banner-run.gif"
-          alt="Corredores"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div className="relative z-10 px-6">
-          <h1 className="text-5xl font-extrabold mb-4">RunForFun</h1>
-          <p className="text-xl max-w-2xl mx-auto">
-            Corre, conecta tu música con tu ritmo y vive la experiencia RunForFun.
-          </p>
-        </div>
-      </section>
-
-      {/* Radio Live */}
-      <section className="py-16 px-6 flex flex-col items-center bg-black/80">
-        <h2 className="text-3xl font-bold mb-6">🎧 Radio Live</h2>
-        <div className="flex flex-col items-center bg-black/40 p-6 rounded-xl shadow-lg max-w-md w-full">
-          <p className="text-lg font-semibold mb-2">{tracks[currentTrack]?.title}</p>
-          <p className="text-sm opacity-70 mb-4">BPM: {bpm}</p>
-          <audio ref={audioRef} src={tracks[currentTrack]?.src} onEnded={nextTrack} />
-          <div className="flex gap-4 mt-4">
-            <button onClick={prevTrack} className="px-4 py-2 bg-gray-700 rounded text-white">⏮️</button>
-            <button onClick={togglePlay} className="px-6 py-2 bg-green-500 rounded font-bold text-black">
-              {isPlaying ? "⏸️ Pausar" : "▶️ Reproducir"}
-            </button>
-            <button onClick={nextTrack} className="px-4 py-2 bg-gray-700 rounded text-white">⏭️</button>
-          </div>
-        </div>
-      </section>
-
-      {/* Sobre la App */}
-      <section className="py-16 px-6 text-center max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold mb-4">Sobre RunForFun</h2>
-        <p className="opacity-80 leading-relaxed">
-          RunForFun combina música y running para ayudarte a encontrar tu ritmo ideal,
-          mejorar tu cadencia y conectarte con otros corredores. Corre, escucha tu música
-          favorita y vive la experiencia completa.
-        </p>
-      </section>
-
-      {/* Descarga App */}
-      <section className="py-16 px-6 text-center max-w-3xl mx-auto flex flex-col items-center gap-4">
-        <img src="/qr-code.png" alt="QR App" className="w-48 h-48" />
-        <h2 className="text-3xl font-bold">Descarga la App</h2>
-        <p className="opacity-80">Escanea el QR o haz clic en el enlace si el QR no funciona.</p>
-        <a href="https://runforfun.app/download" target="_blank" rel="noopener noreferrer"
-           className="text-green-500 font-semibold underline">
-          Descargar App
+      {/* HEADER */}
+      <header className="fixed top-0 left-0 w-full p-5 flex justify-between items-center z-50 bg-black/80 backdrop-blur">
+        <a href="/">
+          <img src="/logo.png" alt="RunForFun Logo" className="h-12" />
         </a>
+
+        <nav className="flex gap-6 font-bold uppercase text-sm">
+          {["Evento", "Radio", "App", "Documentos"].map((item) => (
+            <a
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              className="text-white hover:text-yellow-400 transition"
+            >
+              {item}
+            </a>
+          ))}
+
+          {/* BOTÓN TIENDA */}
+          <Link href="/tienda">
+            <span className="text-white hover:text-yellow-400 cursor-pointer transition">
+              Tienda
+            </span>
+          </Link>
+        </nav>
+      </header>
+
+      {/* HERO PRINCIPAL CON FONDO ANIMADO */}
+      <section
+        id="hero"
+        className="relative flex justify-center items-center text-center h-screen overflow-hidden"
+      >
+        {/* Fondo animado tipo GIF */}
+        <div className="absolute inset-0 animated-fluid-bg"></div>
+
+        {/* Contenido */}
+        <div className="relative z-10 bg-black/40 p-6 rounded-xl backdrop-blur-md shadow-lg">
+          <h1 className="text-5xl md:text-6xl font-extrabold">RunForFun</h1>
+          <p className="mt-4 text-xl opacity-90">
+            Corre, conecta tu música y vibra con tus datos biométricos.
+          </p>
+
+          {/* Botón Tienda dentro del hero (opcional) */}
+          <Link href="/tienda">
+            <button className="mt-6 bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition">
+              Ir a la tienda 🛒
+            </button>
+          </Link>
+        </div>
       </section>
 
-      {/* Video Tutorial */}
-      <section className="py-16 px-6 text-center max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold mb-4">Aprende a usar la App</h2>
-        <video controls src="/tutorial.mp4" className="w-full rounded shadow-lg">Tu navegador no soporta video.</video>
+      {/* ANIMACIÓN CSS */}
+      <style jsx>{`
+        .animated-fluid-bg {
+          position: absolute;
+          width: 200%;
+          height: 200%;
+          top: -50%;
+          left: -50%;
+          background: radial-gradient(circle at 30% 30%, rgba(255, 0, 150, 0.7), transparent 60%),
+                      radial-gradient(circle at 70% 60%, rgba(255, 100, 200, 0.6), transparent 65%),
+                      radial-gradient(circle at 40% 80%, rgba(255, 0, 255, 0.5), transparent 70%),
+                      radial-gradient(circle at 80% 20%, rgba(255, 60, 180, 0.6), transparent 60%);
+          animation: fluidMotion 12s ease-in-out infinite alternate;
+          filter: blur(90px);
+          opacity: 0.85;
+        }
+
+        @keyframes fluidMotion {
+          0% {
+            transform: translate(0px, 0px) scale(1);
+          }
+          50% {
+            transform: translate(80px, -40px) scale(1.2);
+          }
+          100% {
+            transform: translate(-60px, 40px) scale(1.3);
+          }
+        }
+      `}</style>
+
+      {/* SECCIONES (SIMPLIFICADAS, PARA QUE APAREZCAN) */}
+      <section id="evento" className="py-32 px-6 text-center">
+        <h2 className="text-4xl font-bold mb-6">Evento</h2>
+        <p className="opacity-80">Detalles del evento próximamente…</p>
       </section>
 
-      {/* Footer */}
-      <footer className="py-6 text-center bg-black/90">
-        <p>© 2025 RunForFun. Todos los derechos reservados.</p>
+      <section id="radio" className="py-32 px-6 text-center">
+        <h2 className="text-4xl font-bold mb-6">Radio</h2>
+        <p className="opacity-80">Tu música para correr pronto estará aquí…</p>
+      </section>
+
+      <section id="app" className="py-32 px-6 text-center">
+        <h2 className="text-4xl font-bold mb-6">App</h2>
+        <p className="opacity-80">Explora la experiencia RunForFun App.</p>
+      </section>
+
+      <section id="documentos" className="py-32 px-6 text-center">
+        <h2 className="text-4xl font-bold mb-6">Documentos</h2>
+        <p className="opacity-80">Documentos oficiales del proyecto.</p>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="py-16 px-5 text-center bg-black">
+        <img src="/logo.png" alt="RunForFun Logo" className="h-12 mb-3 mx-auto" />
+        <p className="text-white font-bold">
+          © 2025 RunForFun. Todos los derechos reservados.
+        </p>
       </footer>
     </main>
   );
