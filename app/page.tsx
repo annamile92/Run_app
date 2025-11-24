@@ -5,29 +5,10 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function Home() {
-  // RADIO HARD-CODED
   const initialPlaylist = [
-    {
-      id: 1,
-      url: "/radio-tracks/runner_camila_152bpm.wav",
-      title: "Runner - Camila (152 bpm)",
-      bpm: 152,
-      cadence: 164,
-    },
-    {
-      id: 2,
-      url: "/radio-tracks/julian_144bpm.wav",
-      title: "Runner - Julián (144 bpm)",
-      bpm: 144,
-      cadence: 158,
-    },
-    {
-      id: 3,
-      url: "/radio-tracks/relax_120bpm.wav",
-      title: "Cool Down (120 bpm)",
-      bpm: 120,
-      cadence: 120,
-    },
+    { id: 1, url: "/radio-tracks/runner_camila_152bpm.wav", title: "Runner - Camila (152 bpm)", bpm: 152, cadence: 164 },
+    { id: 2, url: "/radio-tracks/julian_144bpm.wav", title: "Runner - Julián (144 bpm)", bpm: 144, cadence: 158 },
+    { id: 3, url: "/radio-tracks/relax_120bpm.wav", title: "Cool Down (120 bpm)", bpm: 120, cadence: 120 },
   ];
 
   const [playlist, setPlaylist] = useState(initialPlaylist);
@@ -114,7 +95,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECCIÓN CONTEXTO */}
+      {/* CONTEXTO */}
       <section id="evento" className="py-16 px-6 flex flex-col md:flex-row items-center bg-gradient-to-b from-gray-800 to-gray-900 gap-6">
         <div className="md:w-1/2">
           <img src="/evento.jpg" alt="Evento" className="rounded-lg shadow-md w-full" />
@@ -127,7 +108,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECCIÓN APP */}
+      {/* APP */}
       <section id="app" className="py-16 px-6 flex flex-col md:flex-row items-center bg-gradient-to-b from-gray-800 to-gray-900 gap-6">
         <div className="md:w-1/2">
           <img src="/1.png" alt="App" className="rounded-lg shadow-md w-full" />
@@ -137,20 +118,30 @@ export default function Home() {
           <p className="opacity-80 leading-relaxed">
             Explora la experiencia RunForFun App. Descarga y conecta tu música y datos biométricos.
           </p>
-          <a href="https://runforfun.app/download" className="mt-4 inline-block text-green-400 font-semibold underline">
+          <a href="https://https://object-volt-59393284.figma.site/" className="mt-4 inline-block text-green-400 font-semibold underline">
             Descargar App
           </a>
         </div>
       </section>
 
-      {/* SECCIÓN DOCUMENTOS */}
+      {/* DOCUMENTOS */}
       <section id="documentos" className="py-16 px-6 flex flex-col md:flex-row items-center bg-gradient-to-b from-gray-800 to-gray-900 gap-6">
         <div className="md:w-1/2">
           <img src="/documentos.png" alt="Documentos" className="rounded-lg shadow-md w-full" />
         </div>
-        <div className="md:w-1/2 text-white">
+        <div className="md:w-1/2 text-white flex flex-col gap-4">
           <h2 className="text-3xl font-bold mb-4">Documentos</h2>
-          <p className="opacity-80 leading-relaxed">Documentos oficiales del proyecto RunForFun.</p>
+          <p className="opacity-80">Documentos oficiales del proyecto RunForFun.</p>
+          
+          {/* BOTONES A ARCHIVOS */}
+          <div className="flex gap-4 mt-4">
+            <a href="https://drive.google.com/archivo1" target="_blank" rel="noopener noreferrer">
+              <Image src="/archivo.png" alt="Archivo 1" width={60} height={60} />
+            </a>
+            <a href="https://drive.google.com/archivo2" target="_blank" rel="noopener noreferrer">
+              <Image src="/archivo.png" alt="Archivo 2" width={60} height={60} />
+            </a>
+          </div>
         </div>
       </section>
 
@@ -160,7 +151,6 @@ export default function Home() {
         <p className="text-white font-bold">© 2025 RunForFun. Todos los derechos reservados.</p>
       </footer>
 
-      {/* ESTILO REPRODUCTOR */}
       <style jsx>{`
         .reproductor-con-blur {
           background-color: rgba(255, 255, 255, 0.2);
@@ -168,7 +158,6 @@ export default function Home() {
           -webkit-backdrop-filter: blur(10px);
         }
       `}</style>
-
     </main>
   );
 }
