@@ -31,48 +31,12 @@ export default function RadioPage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  // Simula llegada de nuevas pistas cada 25s (para demo)
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const nextId = playlist.length + 1;
-      const fake = {
-        id: nextId,
-        url: playlist[Math.floor(Math.random() * playlist.length)].url, // reuse sample
-        title: `Nuevo runner #${nextId}`,
-        bpm: 140 + Math.floor(Math.random() * 30),
-        cadence: 140 + Math.floor(Math.random() * 30),
-      };
-      setPlaylist((p) => [...p, fake]);
-    }, 25000);
-    return () => clearInterval(interval);
-  }, [playlist.length]);
-
-  useEffect(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    const onEnded = () => {
-      const next = (currentIndex + 1) % playlist.length;
-      setCurrentIndex(next);
-      if (isPlaying) {
-        // small delay to ensure src update
-        setTimeout(() => audio.play(), 200);
-      }
-    };
-    audio.addEventListener("ended", onEnded);
-    return () => audio.removeEventListener("ended", onEnded);
-  }, [currentIndex, isPlaying, playlist.length]);
-
-  useEffect(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    audio.src = playlist[currentIndex]?.url || "";
-    if (isPlaying) {
-      audio.play().catch((e) => {
-        console.log("Autoplay blocked or error:", e);
-        setIsPlaying(false);
-      });
-    }
-  }, [currentIndex, playlist, isPlaying]);
+  // Reproducir siguiente pista automáticamente
+  const nextTrack = () => {
+    setCurrentIndex((i) => (i + 1) % playlist.length);
+    setTimeout(() => audioRef.current?.play(), 200);
+    setIsPlaying(true);
+  };
 
   const togglePlay = () => {
     const audio = audioRef.current;
@@ -89,10 +53,22 @@ export default function RadioPage() {
     setCurrentIndex((i) => (i + 1) % playlist.length);
   };
 
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio.src = playlist[currentIndex]?.url;
+    if (isPlaying) {
+      audio.play().catch(() => setIsPlaying(false));
+    }
+  }, [currentIndex, playlist, isPlaying]);
+
   return (
     <div className="min-h-screen flex items-center justify-center p-6 bg-gray-900 text-white">
-      <div className="max-w-2xl w-full bg-black/60 p-6 rounded-lg backdrop-blur">
-        <h2 className="text-2xl font-bold mb-2">RunForFun Radio <span className="text-red-400">● LIVE</span></h2>
+      <div className="max-w-2xl w-full bg-black/50 p-6 rounded-xl backdrop-blur-md shadow-lg">
+        <h2 className="text-2xl font-bold mb-2">
+          RunForFun Radio <span className="text-red-400">● LIVE</span>
+        </h2>
+
         <div className="mb-4">
           <div className="text-lg font-semibold">{playlist[currentIndex]?.title}</div>
           <div className="text-sm text-gray-300">
@@ -100,14 +76,21 @@ export default function RadioPage() {
           </div>
         </div>
 
-        <audio ref={audioRef} />
+        {/* AUDIO CON CONTROLES VISIBLES */}
+        <audio
+          ref={audioRef}
+          src={playlist[currentIndex]?.url}
+          onEnded={nextTrack}
+          controls
+          className="w-full mb-4 rounded"
+        />
 
         <div className="flex items-center gap-4">
           <button
             onClick={togglePlay}
             className="px-4 py-2 bg-white text-black rounded-md font-semibold"
           >
-            {isPlaying ? "Pausar" : "Reproducir"}
+            {isPlaying ? "⏸️ Pausar" : "▶️ Reproducir"}
           </button>
 
           <button
