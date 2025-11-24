@@ -55,7 +55,15 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen font-sans text-white bg-black">
+    <main
+      className="min-h-screen font-sans text-white"
+      style={{
+        backgroundImage: "url('/fondo.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       {/* NAVBAR */}
       <nav className="fixed top-0 w-full flex justify-center gap-8 py-4 bg-black/70 backdrop-blur-sm z-50">
         <Link href="/#contexto" className="hover:text-blue-400 transition">Contexto</Link>
@@ -81,7 +89,7 @@ export default function Home() {
       </section>
 
       {/* RADIO LIVE */}
-      <section id="radio" className="py-16 px-6 flex flex-col items-center bg-black/80">
+      <section id="radio" className="py-16 px-6 flex flex-col items-center bg-black/60">
         <h2 className="text-3xl font-bold mb-6">🎧 Radio Live</h2>
         <div className="flex flex-col items-center bg-black/40 p-6 rounded-xl shadow-lg max-w-md w-full reproductor-con-blur">
           <p className="text-lg font-semibold mb-2">{playlist[currentIndex]?.title}</p>
@@ -92,18 +100,14 @@ export default function Home() {
 
           {/* Controles con íconos */}
           <div className="flex gap-4 mt-4">
-            {/* Siguiente */}
             <button onClick={skipNext} className="p-2 bg-gray-700 rounded">
               <img src="/icons/siguiente.png" alt="Siguiente" className="w-6 h-6" />
             </button>
-
-            {/* Play/Pausa */}
             <button onClick={togglePlay} className="p-2 bg-green-500 rounded">
               <img src="/icons/play-pausa.png" alt={isPlaying ? "Pausar" : "Reproducir"} className="w-6 h-6" />
             </button>
           </div>
 
-          {/* Próximas pistas */}
           <div className="mt-6 w-full">
             <h3 className="font-semibold mb-2">Próximas pistas</h3>
             <ol className="list-decimal list-inside text-sm text-gray-300">
