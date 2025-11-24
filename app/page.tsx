@@ -1,9 +1,16 @@
 // src/app/page.js
+
 import Link from "next/link";
+import {
+  Calendar,
+  Layers,
+  Radio,
+  ShoppingBag,
+} from "lucide-react";
 
 export default function Home() {
   return (
-    <main
+    <div
       className="min-h-screen text-white"
       style={{
         backgroundImage:
@@ -13,46 +20,39 @@ export default function Home() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      {/* Capa oscura encima del GIF */}
-      <div className="min-h-screen w-full bg-black/70">
+      {/* Capa oscura encima del fondo */}
+      <div className="bg-black/60 min-h-screen w-full backdrop-blur-sm">
 
-        {/* ⭐ MENÚ SUPERIOR */}
-        <header className="fixed top-0 left-0 w-full py-5 bg-black/50 backdrop-blur-md z-50">
-          <nav className="flex justify-center gap-10 text-lg font-semibold">
-            <Link href="/evento" className="hover:text-yellow-300 transition">
-              📅 Evento
-            </Link>
+        {/* 🔥 MENÚ SUPERIOR */}
+        <nav className="w-full flex justify-center gap-10 py-6 text-lg font-semibold">
+          <Link href="/evento" className="flex items-center gap-2 hover:text-blue-400 transition">
+            <Calendar size={20} /> Evento
+          </Link>
 
-            <Link href="/proyecto" className="hover:text-yellow-300 transition">
-              📐 Proyecto
-            </Link>
+          <Link href="/proyecto" className="flex items-center gap-2 hover:text-blue-400 transition">
+            <Layers size={20} /> Proyecto
+          </Link>
 
-            <Link href="/radio" className="hover:text-yellow-300 transition">
-              📻 Radio
-            </Link>
+          <Link href="/radio" className="flex items-center gap-2 hover:text-blue-400 transition">
+            <Radio size={20} /> Radio
+          </Link>
 
-            <Link href="/tienda" className="hover:text-yellow-300 transition">
-              🛍️ Tienda
-            </Link>
-          </nav>
-        </header>
+          <Link href="/tienda" className="flex items-center gap-2 hover:text-blue-400 transition">
+            <ShoppingBag size={20} /> Tienda
+          </Link>
+        </nav>
 
-        {/* ⭐ SECCIÓN PRINCIPAL (HERO) */}
-        <section className="flex flex-col items-center justify-center text-center min-h-screen px-6">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-2xl">
+        {/* 🔥 SECCIÓN PRINCIPAL */}
+        <div className="flex flex-col items-center justify-center text-center px-6 mt-24">
+          <h1 className="text-5xl font-extrabold mb-6">
             RunForFun
           </h1>
 
-          <p className="text-xl md:text-2xl max-w-2xl leading-relaxed drop-shadow-xl">
+          <p className="text-xl max-w-2xl leading-relaxed">
             Corre, conecta tu música con tu ritmo y vive la experiencia RunForFun.
           </p>
-        </section>
-
-        {/* ⭐ FOOTER */}
-        <footer className="py-10 text-center text-sm text-gray-300 bg-black/40">
-          © 2025 <strong>RunForFun</strong>. Todos los derechos reservados.
-        </footer>
+        </div>
       </div>
-    </main>
+    </div>
   );
 }
