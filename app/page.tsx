@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   const initialPlaylist = [
@@ -41,7 +42,7 @@ export default function Home() {
       {/* NAVBAR */}
       <nav className="fixed top-0 w-full flex justify-between items-center p-4 bg-black/70 backdrop-blur z-50">
         <div className="flex items-center gap-6">
-          <img src="/logo.png" alt="Logo" className="h-12" />
+          <Image src="/logo.png" alt="Logo" width={60} height={60} />
           <Link href="/#evento" className="hover:text-yellow-400 transition">Evento</Link>
           <Link href="/#app" className="hover:text-yellow-400 transition">App</Link>
           <Link href="/#documentos" className="hover:text-yellow-400 transition">Documentos</Link>
@@ -73,10 +74,10 @@ export default function Home() {
 
           <div className="flex gap-4 mt-4">
             <button onClick={togglePlay} className="p-2 bg-transparent">
-              <img src="/iconos/play-pausa.png" alt="Play/Pause" width={50} height={50} />
+              <Image src="/iconos/play-pausa.png" alt="Play/Pause" width={50} height={50} />
             </button>
             <button onClick={skipNext} className="p-2 bg-transparent">
-              <img src="/iconos/siguiente.png" alt="Siguiente" width={40} height={40} />
+              <Image src="/iconos/siguiente.png" alt="Siguiente" width={40} height={40} />
             </button>
           </div>
         </div>
@@ -121,10 +122,10 @@ export default function Home() {
           <p className="opacity-80">Documentos oficiales del proyecto RunForFun.</p>
           <div className="flex gap-4 mt-4">
             <Link href="https://drive.google.com/archivo1" target="_blank" rel="noopener noreferrer">
-              <img src="/iconos/archivo.png" alt="Archivo 1" width={60} height={60} />
+              <Image src="/iconos/archivo.png" alt="Archivo 1" width={60} height={60} />
             </Link>
             <Link href="https://drive.google.com/archivo2" target="_blank" rel="noopener noreferrer">
-              <img src="/iconos/archivo.png" alt="Archivo 2" width={60} height={60} />
+              <Image src="/iconos/archivo.png" alt="Archivo 2" width={60} height={60} />
             </Link>
           </div>
         </div>
@@ -132,7 +133,7 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer className="py-16 px-5 text-center bg-gradient-to-r from-purple-600 to-blue-500">
-        <img src="/logo.png" alt="Logo" className="mx-auto mb-3 w-20 h-20" />
+        <Image src="/logo.png" alt="Logo" width={80} height={80} className="mx-auto mb-3" />
         <p className="text-white font-bold">© 2025 RunForFun. Todos los derechos reservados.</p>
       </footer>
 
