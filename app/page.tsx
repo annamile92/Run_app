@@ -26,19 +26,13 @@ const productos = [
 export default function TiendaPage() {
   return (
     <div className="tienda-container p-6">
+
       {/* Botón para volver al home */}
-      <Link href="/">
-        <button
-          style={{
-            padding: "10px 16px",
-            marginBottom: "20px",
-            background: "#000",
-            color: "#fff",
-            borderRadius: "8px",
-          }}
-        >
-          ⬅ Volver al Home
-        </button>
+      <Link
+        href="/"
+        className="inline-block mb-5 bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition"
+      >
+        ⬅ Volver al Home
       </Link>
 
       <h1 className="text-3xl font-bold mb-6">Tienda RunForFun</h1>
