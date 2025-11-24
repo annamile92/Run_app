@@ -16,22 +16,21 @@ export default function Home() {
       try {
         const response = await fetch("/api/get-radio-tracks");
         const data = await response.json();
-        setTracks(data.files);
+        // Convert to array of objects with name and bpm
+        const formattedTracks = data.files.map((file) => {
+          const match = file.match(/(\d+)bpm/i);
+          return {
+            name: file,
+            bpm: match ? parseInt(match[1]) : 0,
+          };
+        });
+        setTracks(formattedTracks);
       } catch (err) {
         console.error("Error loading tracks:", err);
       }
     }
     loadTracks();
   }, []);
-
-  // Calculate BPM based on filename
-  useEffect(() => {
-    if (tracks.length > 0) {
-      const fileName = tracks[currentTrackIndex];
-      const match = fileName.match(/(\d+)bpm/i);
-      setBpm(match ? parseInt(match[1]) : 0);
-    }
-  }, [currentTrackIndex, tracks]);
 
   const playPause = () => {
     const audio = audioRef.current;
@@ -47,19 +46,21 @@ export default function Home() {
 
   const nextTrack = () => {
     setCurrentTrackIndex((prev) => (prev + 1) % tracks.length);
-    setIsPlaying(false);
-    setTimeout(() => audioRef.current.play(), 200);
-    setIsPlaying(true);
   };
 
   const prevTrack = () => {
     setCurrentTrackIndex((prev) =>
       prev === 0 ? tracks.length - 1 : prev - 1
     );
-    setIsPlaying(false);
-    setTimeout(() => audioRef.current.play(), 200);
-    setIsPlaying(true);
   };
+
+  // Auto-play when track changes
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (audio && isPlaying) {
+      audio.play();
+    }
+  }, [currentTrackIndex, isPlaying]);
 
   return (
     <main className="w-full min-h-screen bg-black text-white flex flex-col">
@@ -96,14 +97,16 @@ export default function Home() {
 
             {/* Current Track */}
             <p className="text-lg font-semibold">
-              {tracks[currentTrackIndex].replace(".wav", "")}
+              {tracks[currentTrackIndex].name.replace(".wav", "")}
             </p>
-            <p className="text-sm opacity-60">Cadencia: {bpm} BPM</p>
+            <p className="text-sm opacity-60">
+              Cadencia: {tracks[currentTrackIndex].bpm} BPM
+            </p>
 
             {/* Audio */}
             <audio
               ref={audioRef}
-              src={`/radio-tracks/${tracks[currentTrackIndex]}`}
+              src={`/radio-tracks/${tracks[currentTrackIndex].name}`}
               onEnded={nextTrack}
             ></audio>
 
@@ -134,7 +137,61 @@ export default function Home() {
         )}
       </section>
 
-      <div className="h-20"></div>
+      {/* DESCRIPCIÓN DEL PROYECTO */}
+      <section className="px-6 mt-16 max-w-4xl mx-auto text-center">
+        <h3 className="text-2xl font-bold mb-4">Sobre RunForFun</h3>
+        <p className="opacity-80">
+          RunForFun es la app que combina música y running, ayudándote a encontrar tu ritmo ideal, mejorar tu cadencia y conectarte con otros corredores de tu comunidad. Corre, escucha tu música favorita y vive la experiencia completa de RunForFun.
+        </p>
+      </section>
+
+      {/* DESCARGA DE APP */}
+      <section className="px-6 mt-16 flex flex-col md:flex-row items-center justify-center gap-8 max-w-5xl mx-auto">
+        <div className="flex-shrink-0">
+          <img src="/qr-code.png" alt="QR App" className="w-48 h-48" />
+        </div>
+        <div>
+          <h3 className="text-2xl font-bold mb-2">Descarga la App</h3>
+          <p className="opacity-80 mb-2">
+            Escanea el QR para descargar la app o haz clic en el link si el QR no funciona.
+          </p>
+          <a
+            href="https://runforfun.app/download"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-green-400 underline font-semibold"
+          >
+            Descargar App
+          </a>
+        </div>
+      </section>
+
+      {/* VIDEO EXPLICATIVO */}
+      <section className="px-6 mt-16 max-w-4xl mx-auto text-center">
+        <h3 className="text-2xl font-bold mb-4">Aprende a usar la App</h3>
+        <video
+          controls
+          className="w-full rounded-lg shadow-lg"
+          src="/tutorial.mp4"
+        >
+          Tu navegador no soporta video.
+        </video>
+      </section>
+
+      {/* CONCLUSIONES */}
+      <section className="px-6 mt-16 max-w-4xl mx-auto text-center">
+        <h3 className="text-2xl font-bold mb-4">Conclusiones</h3>
+        <p className="opacity-80 mb-4">
+          Gracias por explorar RunForFun. Descubre tu ritmo, corre con tu música favorita y únete a nuestra comunidad de corredores apasionados. ¡Tu próxima carrera está a un clic de distancia!
+        </p>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="px-6 py-6 mt-16 bg-black/80 text-white text-center">
+        <p>© 2025 RunForFun. Todos los derechos reservados.</p>
+      </footer>
+
+      <div className="h-10"></div>
     </main>
   );
 }
