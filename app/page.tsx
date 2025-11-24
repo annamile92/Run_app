@@ -72,15 +72,15 @@ export default function Home() {
           </p>
           <audio ref={audioRef} src={playlist[currentIndex]?.url} onEnded={skipNext} />
 
-          <div className="flex gap-4 mt-4">
-            <button onClick={togglePlay} className="p-2 bg-transparent">
-              <Image src="/iconos/play-pausa.png" alt="Play/Pause" width={50} height={50} />
-            </button>
-            <button onClick={skipNext} className="p-2 bg-transparent">
-              <Image src="/iconos/siguiente.png" alt="Siguiente" width={40} height={40} />
-            </button>
-          </div>
-        </div>
+        <div className="flex gap-4 mt-4">
+  <button onClick={togglePlay} className="p-2 bg-transparent">
+    <Image src="/icons/play-pausa.png" alt="Play/Pause" width={50} height={50} />
+  </button>
+  <button onClick={skipNext} className="p-2 bg-transparent">
+    <Image src="/icons/siguiente.png" alt="Siguiente" width={40} height={40} />
+  </button>
+</div>
+</div>
       </section>
 
       {/* EVENTO */}
