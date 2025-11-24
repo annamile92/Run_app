@@ -16,21 +16,22 @@ export default function Home() {
       try {
         const response = await fetch("/api/get-radio-tracks");
         const data = await response.json();
-        // Convert to array of objects with name and bpm
-        const formattedTracks = data.files.map((file) => {
-          const match = file.match(/(\d+)bpm/i);
-          return {
-            name: file,
-            bpm: match ? parseInt(match[1]) : 0,
-          };
-        });
-        setTracks(formattedTracks);
+        setTracks(data.files);
       } catch (err) {
         console.error("Error loading tracks:", err);
       }
     }
     loadTracks();
   }, []);
+
+  // Calculate BPM based on filename
+  useEffect(() => {
+    if (tracks.length > 0) {
+      const fileName = tracks[currentTrackIndex];
+      const match = fileName.match(/(\d+)bpm/i);
+      setBpm(match ? parseInt(match[1]) : 0);
+    }
+  }, [currentTrackIndex, tracks]);
 
   const playPause = () => {
     const audio = audioRef.current;
@@ -46,21 +47,19 @@ export default function Home() {
 
   const nextTrack = () => {
     setCurrentTrackIndex((prev) => (prev + 1) % tracks.length);
+    setIsPlaying(false);
+    setTimeout(() => audioRef.current.play(), 200);
+    setIsPlaying(true);
   };
 
   const prevTrack = () => {
     setCurrentTrackIndex((prev) =>
       prev === 0 ? tracks.length - 1 : prev - 1
     );
+    setIsPlaying(false);
+    setTimeout(() => audioRef.current.play(), 200);
+    setIsPlaying(true);
   };
-
-  // Auto-play when track changes
-  useEffect(() => {
-    const audio = audioRef.current;
-    if (audio && isPlaying) {
-      audio.play();
-    }
-  }, [currentTrackIndex, isPlaying]);
 
   return (
     <main className="w-full min-h-screen bg-black text-white flex flex-col">
@@ -94,23 +93,17 @@ export default function Home() {
           <p className="opacity-60">Cargando audios…</p>
         ) : (
           <div className="border rounded-xl p-4 bg-white/10 backdrop-blur-sm">
-
-            {/* Current Track */}
             <p className="text-lg font-semibold">
-              {tracks[currentTrackIndex].name.replace(".wav", "")}
+              {tracks[currentTrackIndex].replace(".wav", "")}
             </p>
-            <p className="text-sm opacity-60">
-              Cadencia: {tracks[currentTrackIndex].bpm} BPM
-            </p>
+            <p className="text-sm opacity-60">Cadencia: {bpm} BPM</p>
 
-            {/* Audio */}
             <audio
               ref={audioRef}
-              src={`/radio-tracks/${tracks[currentTrackIndex].name}`}
+              src={`/radio-tracks/${tracks[currentTrackIndex]}`}
               onEnded={nextTrack}
             ></audio>
 
-            {/* Controls */}
             <div className="flex items-center gap-4 mt-4">
               <button
                 onClick={prevTrack}
@@ -195,3 +188,4 @@ export default function Home() {
     </main>
   );
 }
+
