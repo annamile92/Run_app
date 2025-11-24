@@ -72,10 +72,7 @@ export default function Home() {
           <audio ref={audioRef} src={playlist[currentIndex]?.url} onEnded={skipNext} />
 
           <div className="flex gap-4 mt-4">
-            <button onClick={skipPrev} className="p-2 bg-transparent">
-              <Image src="/siguiente.png" alt="Anterior" width={40} height={40} className="rotate-180" />
-            </button>
-            <button onClick={togglePlay} className="p-2 bg-transparent">
+           <button onClick={togglePlay} className="p-2 bg-transparent">
               <Image src="/play-pausa.png" alt="Play/Pause" width={50} height={50} />
             </button>
             <button onClick={skipNext} className="p-2 bg-transparent">
