@@ -75,10 +75,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="evento" className="py-32 px-6 text-center">
-        <h2 className="text-4xl font-bold mb-6">Evento</h2>
-        <p className="opacity-80">Justificacion</p>
-      </section>
+      <section id="contexto" className="py-32 px-6 text-center max-w-5xl mx-auto">
+  <h2 className="text-4xl font-bold mb-12">Contexto</h2>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left text-lg opacity-90">
+    <p>
+      En Medellín, el running ha crecido notablemente en los últimos años, pasando de ser una práctica individual de salud a convertirse en un fenómeno social. Cada vez más personas participan en grupos de corredores, carreras locales y entrenamientos colectivos.
+    </p>
+    <p>
+      Más allá de los beneficios físicos, los corredores buscan compartir experiencias, motivarse mutuamente y generar vínculos sociales. El running ofrece una forma de encuentro natural, distinta a las dinámicas directas de las apps de citas o redes sociales, donde el ejercicio se convierte en un puente hacia la amistad y la comunidad.
+    </p>
+  </div>
+</section>
+
 
       <section id="app" className="py-32 px-6 text-center">
         <h2 className="text-4xl font-bold mb-6">App</h2>
