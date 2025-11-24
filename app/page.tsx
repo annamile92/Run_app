@@ -88,7 +88,7 @@ export default function Home() {
       {/* EVENTO */}
       <section id="evento" className="py-16 px-6 flex flex-col md:flex-row items-center gap-6 bg-section-gradient">
         <div className="md:w-1/2">
-          <img src="/evento.jpg" alt="Evento" className="rounded-lg shadow-md w-full" />
+          <img src="/1.png" alt="Evento" className="rounded-lg shadow-md w-full" />
         </div>
         <div className="md:w-1/2 text-white">
           <h2 className="text-3xl font-bold mb-4">Contexto</h2>
@@ -101,7 +101,7 @@ export default function Home() {
       {/* APP */}
       <section id="app" className="py-16 px-6 flex flex-col md:flex-row items-center gap-6 bg-section-gradient">
         <div className="md:w-1/2">
-          <img src="/1.png" alt="App" className="rounded-lg shadow-md w-full" />
+          <img src="/2.png" alt="App" className="rounded-lg shadow-md w-full" />
         </div>
         <div className="md:w-1/2 text-white">
           <h2 className="text-3xl font-bold mb-4">App</h2>
@@ -117,7 +117,7 @@ export default function Home() {
       {/* DOCUMENTOS */}
       <section id="documentos" className="py-16 px-6 flex flex-col md:flex-row items-center gap-6 bg-section-gradient">
         <div className="md:w-1/2">
-          <img src="/documentos.png" alt="Documentos" className="rounded-lg shadow-md w-full" />
+          <img src="/3.png" alt="Documentos" className="rounded-lg shadow-md w-full" />
         </div>
         <div className="md:w-1/2 text-white flex flex-col gap-4">
           <h2 className="text-3xl font-bold mb-4">Documentos</h2>
