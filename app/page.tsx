@@ -55,30 +55,34 @@ export default function Home() {
   };
 
   return (
-    <main
-      className="min-h-screen font-sans text-white"
-      style={{
-        backgroundImage: "url('/fondo.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
+    <main className="font-sans text-white relative">
+
+      {/* LOGO FIJO */}
+      <div className="fixed top-4 left-4 z-50">
+        <img src="/logo.png" alt="RunForFun Logo" className="h-12" />
+      </div>
+
       {/* NAVBAR */}
-      <nav className="fixed top-0 w-full flex justify-center gap-8 py-4 bg-black/70 backdrop-blur-sm z-50">
-        <Link href="/#contexto" className="hover:text-blue-400 transition">Contexto</Link>
+      <nav className="fixed top-0 w-full flex justify-center gap-8 py-4 bg-black/70 backdrop-blur-sm z-40">
+        <Link href="/#evento" className="hover:text-blue-400 transition">Evento</Link>
+        <Link href="/#radio" className="hover:text-blue-400 transition">Radio</Link>
         <Link href="/#app" className="hover:text-blue-400 transition">App</Link>
         <Link href="/#documentos" className="hover:text-blue-400 transition">Documentos</Link>
         <Link href="/tienda" className="hover:text-blue-400 transition">Tienda</Link>
       </nav>
 
-      {/* HERO CON GIF */}
-      <section className="relative flex justify-center items-center text-center h-screen mt-16 overflow-hidden">
-        <img
-          src="/banner-run.gif"
-          alt="Corredores"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+      {/* HERO */}
+      <section
+        id="hero"
+        className="relative flex justify-center items-center text-center h-screen mt-16 overflow-hidden"
+        style={{
+          backgroundImage: "url('/fondo.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <img src="/banner-run.gif" alt="Corredores" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
         <div className="relative z-10 px-6">
           <h1 className="text-5xl font-extrabold mb-4">RunForFun</h1>
@@ -88,72 +92,113 @@ export default function Home() {
         </div>
       </section>
 
-      {/* RADIO LIVE */}
-      <section id="radio" className="py-16 px-6 flex flex-col items-center bg-black/60">
-        <h2 className="text-3xl font-bold mb-6">🎧 Radio Live</h2>
-        <div className="flex flex-col items-center bg-black/40 p-6 rounded-xl shadow-lg max-w-md w-full reproductor-con-blur">
+      {/* RADIO */}
+      <section
+        id="radio"
+        className="py-16 px-6 flex flex-col items-center"
+        style={{
+          backgroundImage: "url('/fondo.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="reproductor-con-blur max-w-md w-full p-6 rounded-xl bg-white/20 backdrop-blur-md">
+          <h2 className="text-2xl font-bold mb-2">🎧 Radio Live</h2>
           <p className="text-lg font-semibold mb-2">{playlist[currentIndex]?.title}</p>
           <p className="text-sm opacity-70 mb-4">
             BPM: {playlist[currentIndex]?.bpm} • Cadence: {playlist[currentIndex]?.cadence}
           </p>
+
           <audio ref={audioRef} src={playlist[currentIndex]?.url} onEnded={skipNext} className="w-full mb-4 rounded" />
 
-          {/* Controles con íconos */}
-          <div className="flex gap-4 mt-4">
-            <button onClick={skipNext} className="p-2 bg-gray-700 rounded">
-              <img src="/icons/siguiente.png" alt="Siguiente" className="w-6 h-6" />
+          <div className="flex items-center justify-center gap-4">
+            <button onClick={skipPrev}>
+              <img src="/siguiente.png" alt="Anterior" className="w-10 h-10" />
             </button>
-            <button onClick={togglePlay} className="p-2 bg-green-500 rounded">
-              <img src="/icons/play-pausa.png" alt={isPlaying ? "Pausar" : "Reproducir"} className="w-6 h-6" />
+            <button onClick={togglePlay}>
+              <img src="/play-pausa.png" alt={isPlaying ? "Pausar" : "Reproducir"} className="w-12 h-12" />
             </button>
-          </div>
-
-          <div className="mt-6 w-full">
-            <h3 className="font-semibold mb-2">Próximas pistas</h3>
-            <ol className="list-decimal list-inside text-sm text-gray-300">
-              {playlist.slice(currentIndex + 1, currentIndex + 6).map((p) => (
-                <li key={p.id}>{p.title} — {p.bpm} bpm</li>
-              ))}
-            </ol>
+            <button onClick={skipNext}>
+              <img src="/siguiente.png" alt="Siguiente" className="w-10 h-10 rotate-180" />
+            </button>
           </div>
         </div>
       </section>
 
-      {/* CONTEXTO EN DOS COLUMNAS */}
-      <section id="contexto" className="py-32 px-6 max-w-5xl mx-auto grid md:grid-cols-2 gap-12 text-white">
-        <div>
+      {/* EVENTO */}
+      <section
+        id="evento"
+        className="py-32 px-6 text-center grid grid-cols-1 md:grid-cols-2 gap-8"
+        style={{
+          backgroundImage: "url('/fondo.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="md:col-span-2">
           <h2 className="text-4xl font-bold mb-6">Contexto</h2>
         </div>
-        <div className="md:col-span-2 text-opacity-80 text-lg leading-relaxed">
-          En Medellín, el running ha crecido notablemente en los últimos años, pasando de ser una práctica individual de salud a convertirse en un fenómeno social. Cada vez más personas participan en grupos de corredores, carreras locales y entrenamientos colectivos. Más allá de los beneficios físicos, los corredores buscan compartir experiencias, motivarse mutuamente y generar vínculos sociales. El running ofrece una forma de encuentro natural, distinta a las dinámicas directas de las apps de citas o redes sociales, donde el ejercicio se convierte en un puente hacia la amistad y la comunidad.
+        <div>
+          <p className="opacity-80">
+            En Medellín, el running ha crecido notablemente en los últimos años, pasando de ser una práctica individual de salud a convertirse en un fenómeno social. Cada vez más personas participan en grupos de corredores, carreras locales y entrenamientos colectivos.
+          </p>
+        </div>
+        <div>
+          <p className="opacity-80">
+            Más allá de los beneficios físicos, los corredores buscan compartir experiencias, motivarse mutuamente y generar vínculos sociales. El running ofrece una forma de encuentro natural, distinta a las dinámicas directas de las apps de citas o redes sociales, donde el ejercicio se convierte en un puente hacia la amistad y la comunidad.
+          </p>
         </div>
       </section>
 
       {/* APP */}
-      <section id="app" className="py-32 px-6 text-center">
+      <section
+        id="app"
+        className="py-32 px-6 text-center"
+        style={{
+          backgroundImage: "url('/fondo.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
         <h2 className="text-4xl font-bold mb-6">App</h2>
         <p className="opacity-80">Explora la experiencia RunForFun App.</p>
       </section>
 
       {/* DOCUMENTOS */}
-      <section id="documentos" className="py-32 px-6 text-center">
+      <section
+        id="documentos"
+        className="py-32 px-6 text-center"
+        style={{
+          backgroundImage: "url('/fondo.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
         <h2 className="text-4xl font-bold mb-6">Documentos</h2>
         <p className="opacity-80">Documentos oficiales del proyecto.</p>
       </section>
 
       {/* FOOTER */}
-      <footer className="py-16 px-5 text-center bg-black">
+      <footer
+        className="py-16 px-5 text-center"
+        style={{
+          background: "linear-gradient(to right, #8e2de2, #4a00e0, #00f, #00c)", // degradado morado→azul
+        }}
+      >
         <p className="text-white font-bold">© 2025 RunForFun. Todos los derechos reservados.</p>
       </footer>
 
-      {/* ESTILOS GLASSMORPHISM */}
+      {/* ESTILOS */}
       <style jsx>{`
         .reproductor-con-blur {
-          background-color: rgba(255, 255, 255, 0.1);
-          backdrop-filter: blur(12px);
-          -webkit-backdrop-filter: blur(12px);
-          border-radius: 12px;
-          padding: 20px;
+          background-color: rgba(255, 255, 255, 0.2);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          border-radius: 10px;
         }
       `}</style>
     </main>
