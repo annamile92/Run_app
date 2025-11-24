@@ -36,17 +36,17 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen font-sans text-white">
+    <main className="min-h-screen font-sans text-white bg-black">
 
       {/* NAVBAR */}
-      <nav className="fixed top-0 w-full flex items-center justify-between py-4 px-6 bg-black/70 backdrop-blur-md z-50">
+      <nav className="fixed top-0 w-full flex items-center justify-between py-6 px-6 bg-black/80 backdrop-blur-md z-50">
         <div className="flex gap-6 font-bold text-sm">
           <Link href="/#evento" className="hover:text-blue-400 transition">Evento</Link>
           <Link href="/#app" className="hover:text-blue-400 transition">App</Link>
         </div>
 
-        {/* LOGO CENTRADO */}
-        <div className="absolute left-1/2 transform -translate-x-1/2">
+        {/* LOGO CENTRADO Y MÁS ABAJO */}
+        <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-2">
           <img src="/logo.png" alt="RunForFun Logo" className="h-20 md:h-24" />
         </div>
 
@@ -57,7 +57,7 @@ export default function Home() {
       </nav>
 
       {/* HERO */}
-      <section className="relative flex justify-center items-center text-center h-screen mt-16 overflow-hidden">
+      <section className="relative flex justify-center items-center text-center h-screen mt-20 overflow-hidden">
         <img src="/banner-run.gif" alt="Corredores" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
         <div className="relative z-10 px-6">
@@ -69,7 +69,7 @@ export default function Home() {
       </section>
 
       {/* RADIO */}
-      <section id="radio" className="py-16 px-6 flex flex-col items-center bg-[url('/fondo.png')] bg-cover bg-center">
+      <section id="radio" className="py-16 px-6 flex flex-col items-center bg-gradient-to-b from-gray-800 to-gray-900">
         <h2 className="text-3xl font-bold mb-6">🎧 Radio Live</h2>
         <div className="flex flex-col items-center bg-black/40 p-6 rounded-xl shadow-lg max-w-md w-full backdrop-blur-md reproductor-con-blur">
           <p className="text-lg font-semibold mb-2">{playlist[currentIndex]?.title}</p>
@@ -94,7 +94,7 @@ export default function Home() {
       </section>
 
       {/* SECCIÓN EVENTO */}
-      <section id="evento" className="py-32 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 bg-[url('/fondo.png')] bg-cover bg-center items-center">
+      <section id="evento" className="py-32 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 bg-gradient-to-b from-gray-800 to-gray-900 items-center">
         <img src="/evento.jpg" alt="Evento" className="w-full max-w-md rounded-lg shadow-lg" />
         <div className="text-white">
           <h2 className="text-4xl font-bold mb-4">Contexto</h2>
@@ -105,7 +105,7 @@ export default function Home() {
       </section>
 
       {/* SECCIÓN APP */}
-      <section id="app" className="py-32 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 bg-[url('/fondo.png')] bg-cover bg-center items-center">
+      <section id="app" className="py-32 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 bg-gradient-to-b from-gray-800 to-gray-900 items-center">
         <div className="flex justify-center md:justify-start">
           <img src="/1.png" alt="App RunForFun" className="w-full max-w-sm rounded-lg shadow-lg" />
         </div>
@@ -124,7 +124,7 @@ export default function Home() {
       </section>
 
       {/* SECCIÓN DOCUMENTOS */}
-      <section id="documentos" className="py-32 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 bg-[url('/fondo.png')] bg-cover bg-center items-center">
+      <section id="documentos" className="py-32 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 bg-gradient-to-b from-gray-800 to-gray-900 items-center">
         <img src="/documentos.jpg" alt="Documentos" className="w-full max-w-md rounded-lg shadow-lg" />
         <div className="text-white">
           <h2 className="text-4xl font-bold mb-4">Documentos</h2>
@@ -140,7 +140,6 @@ export default function Home() {
         <p className="text-white font-bold">© 2025 RunForFun. Todos los derechos reservados.</p>
       </footer>
 
-      {/* ESTILOS INLINE */}
       <style jsx>{`
         .reproductor-con-blur {
           background-color: rgba(255, 255, 255, 0.2);
