@@ -1,7 +1,7 @@
 "use client";
+
 import { useState, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Home() {
   const initialPlaylist = [
@@ -41,7 +41,7 @@ export default function Home() {
       {/* NAVBAR */}
       <nav className="fixed top-0 w-full flex justify-between items-center p-4 bg-black/70 backdrop-blur z-50">
         <div className="flex items-center gap-6">
-          <Image src="/logo.png" alt="Logo" width={60} height={60} />
+          <img src="/logo.png" alt="Logo" className="h-12" />
           <Link href="/#evento" className="hover:text-yellow-400 transition">Evento</Link>
           <Link href="/#app" className="hover:text-yellow-400 transition">App</Link>
           <Link href="/#documentos" className="hover:text-yellow-400 transition">Documentos</Link>
@@ -64,7 +64,7 @@ export default function Home() {
       {/* RADIO */}
       <section id="radio" className="py-16 px-6 flex flex-col items-center bg-section-gradient">
         <h2 className="text-3xl font-bold mb-6">🎧 Radio Live</h2>
-        <div className="reproductor-con-blur flex flex-col items-center bg-white/20 backdrop-blur-lg p-6 rounded-xl shadow-lg max-w-md w-full">
+        <div className="reproductor-con-blur flex flex-col items-center p-6 rounded-xl shadow-lg max-w-md w-full">
           <p className="text-lg font-semibold mb-2">{playlist[currentIndex]?.title}</p>
           <p className="text-sm opacity-70 mb-4">
             BPM: {playlist[currentIndex]?.bpm} • Cadence: {playlist[currentIndex]?.cadence}
@@ -72,11 +72,11 @@ export default function Home() {
           <audio ref={audioRef} src={playlist[currentIndex]?.url} onEnded={skipNext} />
 
           <div className="flex gap-4 mt-4">
-           <button onClick={togglePlay} className="p-2 bg-transparent">
-              <Image src="/play-pausa.png" alt="Play/Pause" width={50} height={50} />
+            <button onClick={togglePlay} className="p-2 bg-transparent">
+              <img src="/iconos/play-pausa.png" alt="Play/Pause" width={50} height={50} />
             </button>
             <button onClick={skipNext} className="p-2 bg-transparent">
-              <Image src="/siguiente.png" alt="Siguiente" width={40} height={40} />
+              <img src="/iconos/siguiente.png" alt="Siguiente" width={40} height={40} />
             </button>
           </div>
         </div>
@@ -90,7 +90,7 @@ export default function Home() {
         <div className="md:w-1/2 text-white">
           <h2 className="text-3xl font-bold mb-4">Contexto</h2>
           <p className="opacity-80 leading-relaxed">
-            En Medellín, el running ha crecido notablemente …
+            En Medellín, el running ha crecido notablemente en los últimos años, pasando de ser una práctica individual de salud a convertirse en un fenómeno social. Cada vez más personas participan en grupos de corredores, carreras locales y entrenamientos colectivos. Más allá de los beneficios físicos, los corredores buscan compartir experiencias, motivarse mutuamente y generar vínculos sociales. El running ofrece una forma de encuentro natural, distinta a las dinámicas directas de las apps de citas o redes sociales, donde el ejercicio se convierte en un puente hacia la amistad y la comunidad.
           </p>
         </div>
       </section>
@@ -103,9 +103,9 @@ export default function Home() {
         <div className="md:w-1/2 text-white">
           <h2 className="text-3xl font-bold mb-4">App</h2>
           <p className="opacity-80 leading-relaxed">
-            Explora la experiencia RunForFun App. …
+            Explora la experiencia RunForFun App. Puedes descargar la app o escanear el QR.
           </p>
-          <a href="https://object-volt-59393284.figma.site/" className="mt-4 inline-block text-green-400 font-semibold underline">
+          <a href="https://runforfun.app/download" className="mt-4 inline-block text-green-400 font-semibold underline">
             Descargar App
           </a>
         </div>
@@ -121,10 +121,10 @@ export default function Home() {
           <p className="opacity-80">Documentos oficiales del proyecto RunForFun.</p>
           <div className="flex gap-4 mt-4">
             <Link href="https://drive.google.com/archivo1" target="_blank" rel="noopener noreferrer">
-              <Image src="/archivo.png" alt="Archivo 1" width={60} height={60} />
+              <img src="/iconos/archivo.png" alt="Archivo 1" width={60} height={60} />
             </Link>
             <Link href="https://drive.google.com/archivo2" target="_blank" rel="noopener noreferrer">
-              <Image src="/archivo.png" alt="Archivo 2" width={60} height={60} />
+              <img src="/iconos/archivo.png" alt="Archivo 2" width={60} height={60} />
             </Link>
           </div>
         </div>
@@ -132,7 +132,7 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer className="py-16 px-5 text-center bg-gradient-to-r from-purple-600 to-blue-500">
-        <Image src="/logo.png" alt="Logo" width={80} height={80} className="mx-auto mb-3" />
+        <img src="/logo.png" alt="Logo" className="mx-auto mb-3 w-20 h-20" />
         <p className="text-white font-bold">© 2025 RunForFun. Todos los derechos reservados.</p>
       </footer>
 
@@ -144,9 +144,8 @@ export default function Home() {
           border-radius: 10px;
         }
 
-        /* Fondo tipo Figma: gradiente mesh / moderno */
         .bg-section-gradient {
-          background: linear-gradient(135deg, #1f1c2c, #928DAB, #1F1C2C);
+          background: linear-gradient(135deg, #1f1c2c, #2c2a3c, #1F1C2C);
         }
       `}</style>
     </main>
