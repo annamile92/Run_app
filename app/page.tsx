@@ -118,7 +118,7 @@ export default function Home() {
           <p className="opacity-80 leading-relaxed">
             Explora la experiencia RunForFun App. Descarga y conecta tu música y datos biométricos.
           </p>
-          <a href="https://https://object-volt-59393284.figma.site/" className="mt-4 inline-block text-green-400 font-semibold underline">
+          <a href="https://object-volt-59393284.figma.site/" className="mt-4 inline-block text-green-400 font-semibold underline">
             Descargar App
           </a>
         </div>
