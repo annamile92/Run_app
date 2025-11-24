@@ -1,32 +1,46 @@
-// src/app/tienda/page.js
+import React from "react";
+import Link from "next/link";
 
-import React from 'react';
-
-// Lista de productos de ejemplo
+// Lista de productos
 const productos = [
   {
     id: 1,
-    nombre: 'Camiseta RunForFun',
+    nombre: "Camiseta RunForFun",
     precio: 25,
-    imagen: '/productos/camiseta.jpg', // coloca la imagen en public/productos
+    imagen: "/productos/camiseta.jpg",
   },
   {
     id: 2,
-    nombre: 'Gorra RunForFun',
+    nombre: "Gorra RunForFun",
     precio: 15,
-    imagen: '/productos/gorra.jpg',
+    imagen: "/productos/gorra.jpg",
   },
   {
     id: 3,
-    nombre: 'Botella de agua',
+    nombre: "Botella de agua RunForFun",
     precio: 10,
-    imagen: '/productos/botella.jpg',
+    imagen: "/productos/botella.jpg",
   },
 ];
 
 export default function TiendaPage() {
   return (
     <div className="tienda-container p-6">
+      {/* Botón para volver al home */}
+      <Link href="/">
+        <button
+          style={{
+            padding: "10px 16px",
+            marginBottom: "20px",
+            background: "#000",
+            color: "#fff",
+            borderRadius: "8px",
+          }}
+        >
+          ⬅ Volver al Home
+        </button>
+      </Link>
+
       <h1 className="text-3xl font-bold mb-6">Tienda RunForFun</h1>
 
       {/* Banner */}
@@ -43,7 +57,7 @@ export default function TiendaPage() {
         {productos.map((producto) => (
           <div
             key={producto.id}
-            className="producto border rounded-lg p-4 shadow hover:shadow-lg transition"
+            className="border rounded-lg p-4 shadow hover:shadow-lg transition"
           >
             <img
               src={producto.imagen}
