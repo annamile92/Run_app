@@ -10,6 +10,7 @@ export default function Home() {
 
   const audioRef = useRef(null);
 
+  // Cargar tracks desde la API
   useEffect(() => {
     async function loadTracks() {
       try {
@@ -23,11 +24,14 @@ export default function Home() {
     loadTracks();
   }, []);
 
+  // Calcular BPM solo si fileName es string
   useEffect(() => {
     if (tracks.length > 0) {
       const fileName = tracks[currentTrackIndex];
-      const match = fileName.match(/(\d+)bpm/i);
-      setBpm(match ? parseInt(match[1]) : 0);
+      if (typeof fileName === "string") {
+        const match = fileName.match(/(\d+)bpm/i);
+        setBpm(match ? parseInt(match[1]) : 0);
+      }
     }
   }, [currentTrackIndex, tracks]);
 
@@ -139,7 +143,7 @@ export default function Home() {
         <p>© 2025 RunForFun. Todos los derechos reservados.</p>
       </footer>
 
-      {/* ESTILOS */}
+      {/* ESTILOS RESPONSIVE */}
       <style jsx>{`
         .main { font-family: sans-serif; background-color: #000; color: #fff; min-height: 100vh; }
         .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; background-color: rgba(0,0,0,0.6); position: fixed; top:0; width:100%; z-index:20; }
@@ -169,7 +173,6 @@ export default function Home() {
         .video { width: 100%; border-radius: 0.5rem; box-shadow: 0 0 10px rgba(0,0,0,0.5); }
         .footer { padding: 1.5rem; background-color: rgba(0,0,0,0.8); text-align: center; }
 
-        /* MEDIA QUERIES RESPONSIVE */
         @media (min-width: 768px) {
           .downloadContainer { flex-direction: row; align-items: flex-start; gap: 2rem; }
           .downloadText { text-align: left; }
