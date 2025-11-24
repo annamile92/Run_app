@@ -20,7 +20,7 @@ export default function Home() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      {/* Overlay negro suave */}
+      {/* Fondo oscuro con blur */}
       <div className="bg-black/60 min-h-screen w-full backdrop-blur-sm">
         
         {/* 🔥 MENÚ SUPERIOR */}
