@@ -1,57 +1,76 @@
-// src/app/page.js
-
+import React from "react";
 import Link from "next/link";
-import {
-  Calendar,
-  Layers,
-  Radio,
-  ShoppingBag,
-} from "lucide-react";
 
-export default function Home() {
+// Lista de productos
+const productos = [
+  {
+    id: 1,
+    nombre: "Camiseta RunForFun",
+    precio: 25,
+    imagen: "/productos/camiseta.jpg",
+  },
+  {
+    id: 2,
+    nombre: "Gorra RunForFun",
+    precio: 15,
+    imagen: "/productos/gorra.jpg",
+  },
+  {
+    id: 3,
+    nombre: "Botella de agua RunForFun",
+    precio: 10,
+    imagen: "/productos/botella.jpg",
+  },
+];
+
+export default function TiendaPage() {
   return (
-    <div
-      className="min-h-screen text-white"
-      style={{
-        backgroundImage:
-          "url('https://i.pinimg.com/originals/d8/e6/eb/d8e6eb6b345ada088e2448947c483ab4.gif')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      {/* Capa oscura encima del fondo */}
-      <div className="bg-black/60 min-h-screen w-full backdrop-blur-sm">
+    <div className="tienda-container p-6">
+      {/* Botón para volver al home */}
+      <Link href="/">
+        <button
+          style={{
+            padding: "10px 16px",
+            marginBottom: "20px",
+            background: "#000",
+            color: "#fff",
+            borderRadius: "8px",
+          }}
+        >
+          ⬅ Volver al Home
+        </button>
+      </Link>
 
-        {/* 🔥 MENÚ SUPERIOR */}
-        <nav className="w-full flex justify-center gap-10 py-6 text-lg font-semibold">
-          <Link href="/evento" className="flex items-center gap-2 hover:text-blue-400 transition">
-            <Calendar size={20} /> Evento
-          </Link>
+      <h1 className="text-3xl font-bold mb-6">Tienda RunForFun</h1>
 
-          <Link href="/proyecto" className="flex items-center gap-2 hover:text-blue-400 transition">
-            <Layers size={20} /> Proyecto
-          </Link>
+      {/* Banner */}
+      <div className="banner mb-8">
+        <img
+          src="/banner-tienda.jpg"
+          alt="Banner de la tienda"
+          className="w-full rounded-lg shadow-md"
+        />
+      </div>
 
-          <Link href="/radio" className="flex items-center gap-2 hover:text-blue-400 transition">
-            <Radio size={20} /> Radio
-          </Link>
-
-          <Link href="/tienda" className="flex items-center gap-2 hover:text-blue-400 transition">
-            <ShoppingBag size={20} /> Tienda
-          </Link>
-        </nav>
-
-        {/* 🔥 SECCIÓN PRINCIPAL */}
-        <div className="flex flex-col items-center justify-center text-center px-6 mt-24">
-          <h1 className="text-5xl font-extrabold mb-6">
-            RunForFun
-          </h1>
-
-          <p className="text-xl max-w-2xl leading-relaxed">
-            Corre, conecta tu música con tu ritmo y vive la experiencia RunForFun.
-          </p>
-        </div>
+      {/* Productos */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {productos.map((producto) => (
+          <div
+            key={producto.id}
+            className="border rounded-lg p-4 shadow hover:shadow-lg transition"
+          >
+            <img
+              src={producto.imagen}
+              alt={producto.nombre}
+              className="w-full h-48 object-cover mb-4 rounded"
+            />
+            <h2 className="text-xl font-semibold mb-2">{producto.nombre}</h2>
+            <p className="text-gray-700 mb-4">${producto.precio}</p>
+            <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+              Agregar al carrito
+            </button>
+          </div>
+        ))}
       </div>
     </div>
   );
