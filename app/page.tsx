@@ -41,6 +41,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen font-sans text-white bg-black">
+
       {/* NAVBAR */}
       <nav className="fixed top-0 w-full flex justify-between items-center py-4 px-6 bg-black/70 backdrop-blur-sm z-50">
         <div className="flex gap-6 font-bold uppercase text-sm">
@@ -71,11 +72,6 @@ export default function Home() {
           <p className="text-xl max-w-2xl mx-auto">
             Corre, conecta tu música con tu ritmo y vive la experiencia RunForFun.
           </p>
-          <Link href="/tienda">
-            <button className="mt-6 bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition">
-              Ir a la tienda 🛒
-            </button>
-          </Link>
         </div>
       </section>
 
