@@ -1,12 +1,6 @@
 // src/app/page.js
 
 import Link from "next/link";
-import {
-  Calendar,
-  Layers,
-  Radio,
-  ShoppingBag,
-} from "lucide-react";
 
 export default function Home() {
   return (
@@ -20,30 +14,30 @@ export default function Home() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      {/* Fondo oscuro con blur */}
+      {/* Capa oscura */}
       <div className="bg-black/60 min-h-screen w-full backdrop-blur-sm">
-        
+
         {/* 🔥 MENÚ SUPERIOR */}
         <nav className="w-full flex justify-center gap-10 py-6 text-lg font-semibold">
           <Link href="/evento" className="flex items-center gap-2 hover:text-blue-400 transition">
-            <Calendar size={20} /> Evento
+            <span>📅</span> Evento
           </Link>
 
           <Link href="/proyecto" className="flex items-center gap-2 hover:text-blue-400 transition">
-            <Layers size={20} /> Proyecto
+            <span>📐</span> Proyecto
           </Link>
 
           <Link href="/radio" className="flex items-center gap-2 hover:text-blue-400 transition">
-            <Radio size={20} /> Radio
+            <span>📻</span> Radio
           </Link>
 
           <Link href="/tienda" className="flex items-center gap-2 hover:text-blue-400 transition">
-            <ShoppingBag size={20} /> Tienda
+            <span>🛍️</span> Tienda
           </Link>
         </nav>
 
-        {/* 🔥 SECCIÓN PRINCIPAL */}
-        <div className="flex flex-col items-center justify-center text-center px-6 mt-20">
+        {/* 🔥 CONTENIDO PRINCIPAL */}
+        <div className="flex flex-col items-center justify-center text-center px-6 mt-24">
           <h1 className="text-5xl font-extrabold mb-6">
             RunForFun
           </h1>
@@ -52,6 +46,7 @@ export default function Home() {
             Corre, conecta tu música con tu ritmo y vive la experiencia RunForFun.
           </p>
         </div>
+
       </div>
     </div>
   );
