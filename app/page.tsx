@@ -73,10 +73,8 @@ export default function Home() {
         <Image src="/banner-run.gif" alt="Corredores" fill className="object-cover object-center" />
         <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
         <div className="relative z-10 px-6">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-4">¿A qué suenan tus pasos?</h1>
-          <p className="text-xl max-w-2xl mx-auto">
-            Corre, conecta y vive la experiencia Run4Fun.
-          </p>
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-4">Corre, vibra y conecta”</h1>
+        
         </div>
       </section>
 
@@ -87,7 +85,7 @@ export default function Home() {
         </div>
         <div className="md:w-1/2 text-white flex flex-col gap-4">
           <h2 className="text-3xl font-bold mb-4">
-            ¿Estás listo para experimentar cómo se transforma el acto de correr en una experiencia de conexión con otros?
+            ¿Estás listo para experimentar una experiencia de conexión con otros?
           </h2>
           <p className="opacity-80 leading-relaxed">
             En Medellín, correr ya no es solo un deporte: es <strong>una experiencia que conecta, motiva y une</strong>. Cada zancada se transforma en un momento único, donde la música y el movimiento crean <strong>una sensación de comunidad y diversión compartida</strong>.
