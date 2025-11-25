@@ -57,7 +57,7 @@ export default function Home() {
       <nav className="fixed top-0 w-full flex justify-between items-center p-4 bg-black/70 backdrop-blur z-50">
         <div className="flex items-center gap-6">
           <Image src="/logo.png" alt="Logo" width={60} height={60} />
-          <Link href="#evento" className="hover:text-yellow-400 transition">Resumen</Link>
+          <Link href="#evento" className="hover:text-yellow-400 transition">Intro</Link>
           <Link href="#app" className="hover:text-yellow-400 transition">App</Link>
           <Link href="#documentos" className="hover:text-yellow-400 transition">Documentos</Link>
           <Link href="/tienda" className="hover:text-yellow-400 transition">Shop</Link>
@@ -97,9 +97,7 @@ export default function Home() {
     <p className="opacity-80 leading-relaxed">
       Con RunForFun, cada carrera se convierte en <strong>una experiencia viva y colectiva</strong>, donde tus pasos y los de los demás se mezclan en un ritmo que solo se puede sentir, compartir y disfrutar.
     </p>
-    <p className="opacity-80 leading-relaxed font-semibold mt-2">
-      ¿Estás listo para experimentar cómo se transforma el acto de correr en una experiencia de conexión con otros?
-    </p>
+   
   </div>
 </section>
 
