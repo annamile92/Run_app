@@ -168,6 +168,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FOOTER */}
       <footer className="py-16 px-5 text-center bg-gradient-to-r from-purple-600 to-blue-500">
-        <Image src="/logo.png" alt
+        <Image 
+          src="/logo.png" 
+          alt="Logo" 
+          width={80} 
+          height={80} 
+          className="mx-auto"
+        />
+        <p className="text-sm opacity-80 mt-4">
+          © 2025 RunForFun — Todos los derechos reservados.
+        </p>
+      </footer>
+    </main>
+  );
+}
