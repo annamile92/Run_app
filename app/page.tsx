@@ -161,11 +161,11 @@ export default function Home() {
         </p>
       </footer>
 
-      {/* MINI PLAYER FLOTANTE ARRIBA */}
-    <div
+     {/* MINI PLAYER FLOTANTE ARRIBA */}
+<div
   className="
     fixed top-[40px] right-6 z-[9999]
-    w-54 px-4 py-2
+    w-72 px-4 py-1
     rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl
     flex items-center justify-between
   "
@@ -180,16 +180,17 @@ export default function Home() {
   </div>
 
   <div className="flex items-center gap-3">
-    <button onClick={togglePlay} className="p-2">
-      <Image src="/icons/play-pausa.png" width={70} height={70} alt="play" />
+    <button onClick={togglePlay} className="p-1">
+      <Image src="/icons/play-pausa.png" width={50} height={50} alt="play" />
     </button>
-    <button onClick={skipNext} className="p-2">
-      <Image src="/icons/siguiente.png" width={70} height={70} alt="next" />
+    <button onClick={skipNext} className="p-1">
+      <Image src="/icons/siguiente.png" width={50} height={50} alt="next" />
     </button>
   </div>
 </div>
 
 <audio ref={audioRef} src={playlist[currentIndex].url} onEnded={skipNext} />
+
 
     </main>
   );
