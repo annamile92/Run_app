@@ -81,18 +81,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* EVENTO */}
-      <section id="evento" className="py-16 px-6 flex flex-col md:flex-row items-center gap-6 bg-[#2e2e2ecc]">
-        <div className="md:w-1/2 flex justify-center">
-          <Image src="/1.png" alt="Evento" width={280} height={280} className="rounded-lg shadow-md" />
-        </div>
-        <div className="md:w-1/2 text-white">
-          <h2 className="text-3xl font-bold mb-4">Contexto</h2>
-          <p className="opacity-80 leading-relaxed">
-            En Medellín, el running ha crecido notablemente en los últimos años...
-          </p>
-        </div>
-      </section>
+  {/* EVENTO */}
+<section id="evento" className="py-16 px-6 flex flex-col md:flex-row items-center gap-6 bg-[#2e2e2ecc]">
+  <div className="md:w-1/2 flex justify-center">
+    <Image src="/1.png" alt="Evento" width={280} height={280} className="rounded-lg shadow-md" />
+  </div>
+  <div className="md:w-1/2 text-white flex flex-col gap-4">
+    <h2 className="text-3xl font-bold mb-4">Contexto</h2>
+    <p className="opacity-80 leading-relaxed">
+      En Medellín, correr ya no es solo un deporte: es <strong>una experiencia que conecta, motiva y une</strong>. Cada zancada se transforma en un momento único, donde la música y el movimiento crean <strong>una sensación de comunidad y diversión compartida</strong>.
+    </p>
+    <p className="opacity-80 leading-relaxed">
+      Olvida las apps que solo muestran números: aquí lo importante es <strong>vivir el momento, disfrutar la compañía y formar parte de algo especial junto a otros corredores</strong>.
+    </p>
+    <p className="opacity-80 leading-relaxed">
+      Con RunForFun, cada carrera se convierte en <strong>una experiencia viva y colectiva</strong>, donde tus pasos y los de los demás se mezclan en un ritmo que solo se puede sentir, compartir y disfrutar.
+    </p>
+    <p className="opacity-80 leading-relaxed font-semibold mt-2">
+      ¿Estás listo para experimentar cómo se transforma el acto de correr en una experiencia de conexión con otros?
+    </p>
+  </div>
+</section>
+
       
      {/* APP */}
 <section id="app" className="py-16 px-6 flex flex-col md:flex-row items-center gap-6 bg-[#3a3a3acc]">
