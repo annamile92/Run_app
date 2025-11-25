@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Home() {
   const playlist = [
     { id: 1, url: "/radio-tracks/runner_camila_152bpm.wav", title: "Runner - Camila", bpm: 152, cadence: 164 },
-    { id: 2, url: "/radio-tracks/runner_camila_160bpm.wav", title: "Runner - Camila", bpm: 160, cadence: 170 },
+    { id: 2, url: "/radio-tracks/relax_120bpm.wav", title: "Runner - Camila", bpm: 160, cadence: 170 },
     { id: 3, url: "/radio-tracks/runner_camila_170bpm.wav", title: "Runner - Camila", bpm: 170, cadence: 180 },
   ];
 
