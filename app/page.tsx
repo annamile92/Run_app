@@ -149,7 +149,7 @@ export default function Home() {
 
 
       {/* MINI PLAYER FLOTANTE ARRIBA */}
-      <div className="fixed top-[40px] right-6 z-[9999] w-72 px-4 py-1 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl flex items-center justify-between">
+      <div className="fixed top-[100px] right-6 z-[9999] w-72 px-4 py-1 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl flex items-center justify-between">
         <div className="flex flex-col">
           <span className="text-sm font-semibold text-white">
             {playlist[currentIndex].title}
