@@ -87,7 +87,7 @@ export default function Home() {
     <Image src="/1.png" alt="Evento" width={280} height={280} className="rounded-lg shadow-md" />
   </div>
   <div className="md:w-1/2 text-white flex flex-col gap-4">
-    <h2 className="text-3xl font-bold mb-4">Contexto</h2>
+    <h2 className="text-3xl font-bold mb-4">   ¿Estás listo para experimentar cómo se transforma el acto de correr en una experiencia de conexión con otros?</h2>
     <p className="opacity-80 leading-relaxed">
       En Medellín, correr ya no es solo un deporte: es <strong>una experiencia que conecta, motiva y une</strong>. Cada zancada se transforma en un momento único, donde la música y el movimiento crean <strong>una sensación de comunidad y diversión compartida</strong>.
     </p>
