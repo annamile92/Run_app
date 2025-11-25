@@ -52,17 +52,17 @@ export default function Home() {
 
   return (
     <main className="font-sans text-white">
+{/* NAVBAR */}
+<nav className="fixed top-0 w-full flex justify-between items-center p-4 bg-gradient-to-r from-purple-600 to-blue-500/90 backdrop-blur z-50">
+  <div className="flex items-center gap-6">
+    <Image src="/logo.png" alt="Logo" width={60} height={60} />
+    <Link href="#evento" className="hover:text-yellow-400 transition">Intro</Link>
+    <Link href="#app" className="hover:text-yellow-400 transition">App</Link>
+    <Link href="#documentos" className="hover:text-yellow-400 transition">Documentos</Link>
+    <Link href="/tienda" className="hover:text-yellow-400 transition">Shop</Link>
+  </div>
+</nav>
 
-      {/* NAVBAR */}
-      <nav className="fixed top-0 w-full flex justify-between items-center p-4 bg-black/70 backdrop-blur z-50">
-        <div className="flex items-center gap-6">
-          <Image src="/logo.png" alt="Logo" width={60} height={60} />
-          <Link href="#evento" className="hover:text-yellow-400 transition">Intro</Link>
-          <Link href="#app" className="hover:text-yellow-400 transition">App</Link>
-          <Link href="#documentos" className="hover:text-yellow-400 transition">Documentos</Link>
-          <Link href="/tienda" className="hover:text-yellow-400 transition">Shop</Link>
-        </div>
-      </nav>
 
       {/* HERO */}
       <section className="relative flex justify-center items-center text-center h-[60vh] md:h-[65vh] mt-20 overflow-hidden bg-[#222]">
