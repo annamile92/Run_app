@@ -20,11 +20,8 @@ export default function Home() {
     const audio = audioRef.current;
     if (!audio) return;
 
-    if (isPlaying) {
-      audio.pause();
-    } else {
-      audio.play().catch(() => setIsPlaying(false));
-    }
+    if (isPlaying) audio.pause();
+    else audio.play().catch(() => setIsPlaying(false));
 
     setIsPlaying(!isPlaying);
   };
@@ -48,10 +45,19 @@ export default function Home() {
       <nav className="fixed top-0 w-full flex justify-between items-center p-4 bg-black/70 backdrop-blur z-50">
         <div className="flex items-center gap-6">
           <Image src="/logo.png" alt="Logo" width={60} height={60} />
-          <Link href="/#evento" className="hover:text-yellow-400 transition">Evento</Link>
-          <Link href="/#app" className="hover:text-yellow-400 transition">App</Link>
-          <Link href="/#documentos" className="hover:text-yellow-400 transition">Documentos</Link>
-          <Link href="/tienda" className="hover:text-yellow-400 transition">Tienda</Link>
+
+          <Link href="/#evento" className="hover:text-yellow-400 transition">
+            Resumen
+          </Link>
+          <Link href="/#app" className="hover:text-yellow-400 transition">
+            App
+          </Link>
+          <Link href="/#documentos" className="hover:text-yellow-400 transition">
+            Documentos
+          </Link>
+          <Link href="/tienda" className="hover:text-yellow-400 transition">
+            Shop
+          </Link>
         </div>
       </nav>
 
@@ -64,6 +70,7 @@ export default function Home() {
           className="object-cover"
         />
         <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+
         <div className="relative z-10 px-6">
           <h1 className="text-5xl md:text-6xl font-extrabold mb-4">RunForFun</h1>
           <p className="text-xl max-w-2xl mx-auto">
@@ -73,10 +80,10 @@ export default function Home() {
       </section>
 
       {/* RADIO */}
-      <section id="radio" className="py-16 px-6 flex flex-col items-center bg-section-gradient">
+      <section id="radio" className="py-16 px-6 flex flex-col items-center bg-[#333]">
         <h2 className="text-3xl font-bold mb-6">🎧 Radio Live</h2>
 
-        <div className="reproductor-con-blur flex flex-col items-center p-6 rounded-xl shadow-lg max-w-md w-full">
+        <div className="flex flex-col items-center p-6 rounded-xl shadow-lg max-w-md w-full">
           <p className="text-lg font-semibold mb-2">{playlist[currentIndex]?.title}</p>
 
           <p className="text-sm opacity-70 mb-4">
@@ -98,14 +105,14 @@ export default function Home() {
       </section>
 
       {/* EVENTO */}
-      <section id="evento" className="py-16 px-6 flex flex-col md:flex-row items-center gap-6 bg-section-gradient">
-        <div className="md:w-1/2">
+      <section id="evento" className="py-16 px-6 flex flex-col md:flex-row items-center gap-6 bg-[#4a4a4a]">
+        <div className="md:w-1/2 flex justify-center">
           <Image 
             src="/1.png"
             alt="Evento"
-            width={800}
-            height={600}
-            className="rounded-lg shadow-md w-full"
+            width={400}
+            height={300}
+            className="rounded-lg shadow-md w-full max-w-sm"
           />
         </div>
 
@@ -118,14 +125,14 @@ export default function Home() {
       </section>
 
       {/* APP */}
-      <section id="app" className="py-16 px-6 flex flex-col md:flex-row items-center gap-6 bg-section-gradient">
-        <div className="md:w-1/2">
+      <section id="app" className="py-16 px-6 flex flex-col md:flex-row items-center gap-6 bg-[#333]">
+        <div className="md:w-1/2 flex justify-center">
           <Image 
             src="/2.png"
             alt="App"
-            width={800}
-            height={600}
-            className="rounded-lg shadow-md w-full"
+            width={400}
+            height={300}
+            className="rounded-lg shadow-md w-full max-w-sm"
           />
         </div>
 
@@ -141,14 +148,14 @@ export default function Home() {
       </section>
 
       {/* DOCUMENTOS */}
-      <section id="documentos" className="py-16 px-6 flex flex-col md:flex-row items-center gap-6 bg-section-gradient">
-        <div className="md:w-1/2">
+      <section id="documentos" className="py-16 px-6 flex flex-col md:flex-row items-center gap-6 bg-[#4a4a4a]">
+        <div className="md:w-1/2 flex justify-center">
           <Image 
             src="/3.png"
             alt="Documentos"
-            width={800}
-            height={600}
-            className="rounded-lg shadow-md w-full"
+            width={400}
+            height={300}
+            className="rounded-lg shadow-md w-full max-w-sm"
           />
         </div>
 
@@ -157,17 +164,18 @@ export default function Home() {
           <p className="opacity-80">Documentos oficiales del proyecto RunForFun.</p>
 
           <div className="flex gap-4 mt-4">
-            <Link href="https://drive.google.com/archivo1" target="_blank">
-              <Image src="/icons/archivo.png" alt="Archivo 1" width={60} height={60} />
+            <Link href="/archivo.png" target="_blank">
+              <Image src="/archivo.png" alt="Archivo 1" width={60} height={60} />
             </Link>
 
-            <Link href="https://drive.google.com/archivo2" target="_blank">
-              <Image src="/icons/archivo.png" alt="Archivo 2" width={60} height={60} />
+            <Link href="/archivo.png" target="_blank">
+              <Image src="/archivo.png" alt="Archivo 2" width={60} height={60} />
             </Link>
           </div>
         </div>
       </section>
 
+      {/* FOOTER */}
       <footer className="py-16 px-5 text-center bg-gradient-to-r from-purple-600 to-blue-500">
         <Image 
           src="/logo.png" 
