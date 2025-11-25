@@ -164,11 +164,11 @@ export default function Home() {
       {/* MINI PLAYER FLOTANTE ARRIBA */}
       <div
         className="
-          fixed top-[52px] right-6 z-[9999]
-          w-54 px-4 py-2
-          rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl
-          flex items-center justify-between
-        "
+    fixed top-[60px] right-6 z-[9999]
+    w-54 px-4 py-2
+    rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl
+    flex items-center justify-between
+  "
       >
         <div className="flex flex-col">
           <span className="text-sm font-semibold text-white">
