@@ -6,9 +6,27 @@ import Image from "next/image";
 
 export default function Home() {
   const initialPlaylist = [
-    { id: 1, url: "/radio-tracks/runner_camila_152bpm.wav", title: "Runner - Camila (152 bpm)", bpm: 152, cadence: 164 },
-    { id: 2, url: "/radio-tracks/julian_144bpm.wav", title: "Runner - Julián (144 bpm)", bpm: 144, cadence: 158 },
-    { id: 3, url: "/radio-tracks/relax_120bpm.wav", title: "Cool Down (120 bpm)", bpm: 120, cadence: 120 },
+    {
+      id: 1,
+      url: "/radio-tracks/runner_camila_152bpm.wav",
+      title: "Runner - Camila (152 bpm)",
+      bpm: 152,
+      cadence: 164,
+    },
+    {
+      id: 2,
+      url: "/radio-tracks/julian_144bpm.wav",
+      title: "Runner - Julián (144 bpm)",
+      bpm: 144,
+      cadence: 158,
+    },
+    {
+      id: 3,
+      url: "/radio-tracks/relax_120bpm.wav",
+      title: "Cool Down (120 bpm)",
+      bpm: 120,
+      cadence: 120,
+    },
   ];
 
   const [playlist] = useState(initialPlaylist);
@@ -153,6 +171,36 @@ export default function Home() {
         </p>
       </footer>
 
+      {/*  🔥 MINI PLAYER FLOTANTE A LA DERECHA */}
+      <div
+        className="
+          fixed bottom-6 right-6 z-[9999]
+          w-64 px-4 py-3
+          rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl
+          flex items-center justify-between
+        "
+      >
+        <div className="flex flex-col">
+          <span className="text-sm font-semibold text-white">
+            {playlist[currentIndex].title}
+          </span>
+          <span className="text-xs text-white/70">
+            {playlist[currentIndex].bpm} BPM · {playlist[currentIndex].cadence} Cad
+          </span>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <button onClick={togglePlay}>
+            <Image src="/icons/play-pausa.png" width={28} height={28} alt="play" />
+          </button>
+
+          <button onClick={skipNext}>
+            <Image src="/icons/siguiente.png" width={28} height={28} alt="next" />
+          </button>
+        </div>
+      </div>
+
+      <audio ref={audioRef} src={playlist[currentIndex].url} onEnded={skipNext} />
     </main>
   );
 }
