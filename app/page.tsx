@@ -64,17 +64,28 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* HERO */}
-      <section className="relative flex justify-center items-center text-center h-screen mt-20 overflow-hidden bg-[#222]">
-        <Image src="/banner-run.gif" alt="Corredores" fill className="object-cover" />
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-        <div className="relative z-10 px-6">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-4">Run4Fun</h1>
-          <p className="text-xl max-w-2xl mx-auto">
-            Corre, conecta tu música con tu ritmo y vive la experiencia RunForFun.
-          </p>
-        </div>
-      </section>
+     
+     {/* HERO */}
+<section className="relative flex justify-center items-center text-center h-[60vh] md:h-[70vh] mt-20 overflow-hidden bg-[#222]">
+  <Image
+    src="/banner-run.gif"
+    alt="Corredores"
+    fill
+    className="object-cover object-center"
+  />
+  
+  {/* Capa de oscurecimiento / blur */}
+  <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+
+  {/* Texto encima */}
+  <div className="relative z-10 px-6">
+    <h1 className="text-5xl md:text-6xl font-extrabold mb-4">Run4Fun</h1>
+    <p className="text-xl max-w-2xl mx-auto">
+      Corre, conecta tu música con tu ritmo y vive la experiencia RunForFun.
+    </p>
+  </div>
+</section>
+
 
       {/* EVENTO */}
       <section id="evento" className="py-16 px-6 flex flex-col md:flex-row items-center gap-6 bg-[#2e2e2eB3]">
