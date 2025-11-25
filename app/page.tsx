@@ -57,7 +57,7 @@ export default function Home() {
         <Image src="/banner-run.gif" alt="Corredores" fill className="object-cover" />
         <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
         <div className="relative z-10 px-6">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-4">RunForFun</h1>
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-4">Run4Fun</h1>
           <p className="text-xl max-w-2xl mx-auto">
             Corre, conecta tu música con tu ritmo y vive la experiencia RunForFun.
           </p>
@@ -66,7 +66,7 @@ export default function Home() {
 
       {/* RADIO */}
       <section id="radio" className="py-16 px-6 flex flex-col items-center bg-[#333333CC]">
-        <h2 className="text-3xl font-bold mb-6">🎧 Radio Live</h2>
+        <h2 className="text-3xl font-bold mb-6">🎧 Audios en vivo </h2>
 
         <div className="flex flex-col items-center p-6 rounded-xl shadow-lg max-w-md w-full bg-black/40 backdrop-blur">
           <p className="text-lg font-semibold mb-2">{playlist[currentIndex]?.title}</p>
