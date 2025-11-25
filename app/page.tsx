@@ -115,10 +115,10 @@ export default function Home() {
           </p>
 
           <a
-            href="https://runforfun.app/download"
+            href="https://object-volt-59393284.figma.site/"
             className="mt-4 inline-block text-green-400 font-semibold underline"
           >
-            Descargar App
+            Abrir la app"
           </a>
         </div>
       </section>
