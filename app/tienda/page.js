@@ -5,19 +5,19 @@ import Link from "next/link";
 const productos = [
   {
     id: 1,
-    nombre: "Camiseta RunForFun",
+    nombre: "Camiseta Run4Fun",
     precio: 25,
     imagen: "/productos/camiseta.jpg",
   },
   {
     id: 2,
-    nombre: "Gorra RunForFun",
+    nombre: "Gorra RunF4Fun",
     precio: 15,
     imagen: "/productos/gorra.jpg",
   },
   {
     id: 3,
-    nombre: "Botella de agua RunForFun",
+    nombre: "Botella de agua Run4Fun",
     precio: 10,
     imagen: "/productos/botella.jpg",
   },
