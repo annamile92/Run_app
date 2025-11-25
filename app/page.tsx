@@ -162,34 +162,35 @@ export default function Home() {
       </footer>
 
       {/* MINI PLAYER FLOTANTE ARRIBA */}
-      <div
-        className="
+    <div
+  className="
     fixed top-[60px] right-6 z-[9999]
     w-54 px-4 py-2
     rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl
     flex items-center justify-between
   "
-      >
-        <div className="flex flex-col">
-          <span className="text-sm font-semibold text-white">
-            {playlist[currentIndex].title}
-          </span>
-          <span className="text-xs text-white/70">
-            {playlist[currentIndex].bpm} BPM · {playlist[currentIndex].cadence} Cad
-          </span>
-        </div>
+>
+  <div className="flex flex-col">
+    <span className="text-sm font-semibold text-white">
+      {playlist[currentIndex].title}
+    </span>
+    <span className="text-xs text-white/70">
+      {playlist[currentIndex].bpm} BPM · {playlist[currentIndex].cadence} Cad
+    </span>
+  </div>
 
-        <div className="flex items-center gap-3">
-          <button onClick={togglePlay}>
-            <Image src="/icons/play-pausa.png" width={28} height={28} alt="play" />
-          </button>
-          <button onClick={skipNext}>
-            <Image src="/icons/siguiente.png" width={28} height={28} alt="next" />
-          </button>
-        </div>
-      </div>
+  <div className="flex items-center gap-3">
+    <button onClick={togglePlay} className="p-2">
+      <Image src="/icons/play-pausa.png" width={40} height={40} alt="play" />
+    </button>
+    <button onClick={skipNext} className="p-2">
+      <Image src="/icons/siguiente.png" width={40} height={40} alt="next" />
+    </button>
+  </div>
+</div>
 
-      <audio ref={audioRef} src={playlist[currentIndex].url} onEnded={skipNext} />
+<audio ref={audioRef} src={playlist[currentIndex].url} onEnded={skipNext} />
+
     </main>
   );
 }
