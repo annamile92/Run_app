@@ -65,7 +65,7 @@ export default function Home() {
 
 
       {/* HERO */}
-      <section className="relative flex justify-center items-center text-center h-[60vh] md:h-[65vh] mt-20 overflow-hidden bg-[#222]">
+      <section className="relative flex justify-center items-center text-center h-[80vh] md:h-[90vh] mt-20 overflow-hidden bg-[#222]">
         <Image
           src="/banner-run.gif"
           alt="Corredores"
