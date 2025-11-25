@@ -64,33 +64,30 @@ export default function Home() {
         </div>
       </nav>
 
-     
-     {/* HERO */}
-<section className="relative flex justify-center items-center text-center h-[60vh] md:h-[70vh] mt-20 overflow-hidden bg-[#222]">
-  <Image
-    src="/banner-run.gif"
-    alt="Corredores"
-    fill
-    className="object-cover object-center"
-  />
-  
-  {/* Capa de oscurecimiento / blur */}
-  <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
 
-  {/* Texto encima */}
-  <div className="relative z-10 px-6">
-    <h1 className="text-5xl md:text-6xl font-extrabold mb-4">Run4Fun</h1>
-    <p className="text-xl max-w-2xl mx-auto">
-      Corre, conecta tu música con tu ritmo y vive la experiencia RunForFun.
-    </p>
-  </div>
-</section>
+      {/* HERO — REDUCIDO */}
+      <section className="relative flex justify-center items-center text-center h-[60vh] md:h-[65vh] mt-20 overflow-hidden bg-[#222]">
+        <Image
+          src="/banner-run.gif"
+          alt="Corredores"
+          fill
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+
+        <div className="relative z-10 px-6">
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-4">Run4Fun</h1>
+          <p className="text-xl max-w-2xl mx-auto">
+            Corre, conecta tu música con tu ritmo y vive la experiencia RunForFun.
+          </p>
+        </div>
+      </section>
 
 
       {/* EVENTO */}
-      <section id="evento" className="py-16 px-6 flex flex-col md:flex-row items-center gap-6 bg-[#2e2e2eB3]">
+      <section id="evento" className="py-16 px-6 flex flex-col md:flex-row items-center gap-6 bg-[#2e2e2ecc]">
         <div className="md:w-1/2 flex justify-center">
-          <Image src="/1.png" alt="Evento" width={300} height={300} className="rounded-lg shadow-md" />
+          <Image src="/1.png" alt="Evento" width={280} height={280} className="rounded-lg shadow-md" />
         </div>
 
         <div className="md:w-1/2 text-white">
@@ -101,10 +98,11 @@ export default function Home() {
         </div>
       </section>
 
+
       {/* APP */}
-      <section id="app" className="py-16 px-6 flex flex-col md:flex-row items-center gap-6 bg-[#444444CC]">
+      <section id="app" className="py-16 px-6 flex flex-col md:flex-row items-center gap-6 bg-[#3a3a3acc]">
         <div className="md:w-1/2 flex justify-center">
-          <Image src="/2.png" alt="App" width={300} height={300} className="rounded-lg shadow-md" />
+          <Image src="/2.png" alt="App" width={280} height={280} className="rounded-lg shadow-md" />
         </div>
 
         <div className="md:w-1/2 text-white">
@@ -122,10 +120,11 @@ export default function Home() {
         </div>
       </section>
 
+
       {/* DOCUMENTOS */}
-      <section id="documentos" className="py-16 px-6 flex flex-col md:flex-row items-center gap-6 bg-[#2e2e2eB3]">
+      <section id="documentos" className="py-16 px-6 flex flex-col md:flex-row items-center gap-6 bg-[#2e2e2ecc]">
         <div className="md:w-1/2 flex justify-center">
-          <Image src="/3.png" alt="Documentos" width={300} height={300} className="rounded-lg shadow-md" />
+          <Image src="/3.png" alt="Documentos" width={280} height={280} className="rounded-lg shadow-md" />
         </div>
 
         <div className="md:w-1/2 text-white flex flex-col gap-4">
@@ -143,6 +142,7 @@ export default function Home() {
         </div>
       </section>
 
+
       {/* FOOTER */}
       <footer className="py-16 px-5 text-center bg-gradient-to-r from-purple-600 to-blue-500">
         <Image src="/logo.png" alt="Logo" width={80} height={80} className="mx-auto" />
@@ -151,10 +151,11 @@ export default function Home() {
         </p>
       </footer>
 
-      {/* MINI PLAYER FLOTANTE */}
+
+      {/* MINI PLAYER FLOTANTE ARRIBA */}
       <div
         className="
-          fixed bottom-6 right-6 z-[9999]
+          fixed top-[72px] right-6 z-[9999]
           w-64 px-4 py-3
           rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl
           flex items-center justify-between
