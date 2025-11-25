@@ -41,7 +41,7 @@ export default function TiendaPage() {
         </button>
       </Link>
 
-      <h1 className="text-3xl font-bold mb-6">Tienda RunForFun</h1>
+      <h1 className="text-3xl font-bold mb-6">Tienda Run4Fun</h1>
 
       {/* Banner */}
       <div className="banner mb-8">
