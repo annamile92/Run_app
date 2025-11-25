@@ -73,7 +73,7 @@ export default function Home() {
         <Image src="/banner-run.gif" alt="Corredores" fill className="object-cover object-center" />
         <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
         <div className="relative z-10 px-6">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-4">Corre, vibra y conecta”</h1>
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-4">Corre, vibra y conecta</h1>
         
         </div>
       </section>
