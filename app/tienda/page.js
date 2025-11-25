@@ -6,19 +6,19 @@ const productos = [
   {
     id: 1,
     nombre: "Camiseta Run4Fun",
-    precio: 25,
+    precio: 45000,
     imagen: "/productos/camiseta.jpg",
   },
   {
     id: 2,
     nombre: "Gorra RunF4Fun",
-    precio: 15,
+    precio: 35000,
     imagen: "/productos/gorra.jpg",
   },
   {
     id: 3,
     nombre: "Botella de agua Run4Fun",
-    precio: 10,
+    precio: 15000,
     imagen: "/productos/botella.jpg",
   },
 ];
@@ -37,11 +37,11 @@ export default function TiendaPage() {
             borderRadius: "8px",
           }}
         >
-          ⬅ Volver al Home
+          ⬅ Volver
         </button>
       </Link>
 
-      <h1 className="text-3xl font-bold mb-6">Tienda Run4Fun</h1>
+      <h1 className="text-3xl font-bold mb-6">Productos</h1>
 
       {/* Banner */}
       <div className="banner mb-8">
@@ -67,7 +67,7 @@ export default function TiendaPage() {
             <h2 className="text-xl font-semibold mb-2">{producto.nombre}</h2>
             <p className="text-gray-700 mb-4">${producto.precio}</p>
             <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
-              Agregar al carrito
+              Lo quiero
             </button>
           </div>
         ))}
