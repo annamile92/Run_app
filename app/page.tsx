@@ -18,11 +18,9 @@ export default function Home() {
     const audio = audioRef.current;
     if (!audio) return;
 
-    if (isPlaying) {
-      audio.pause();
-    } else {
-      audio.play();
-    }
+    if (isPlaying) audio.pause();
+    else audio.play();
+
     setIsPlaying(!isPlaying);
   };
 
@@ -35,7 +33,6 @@ export default function Home() {
     }
   };
 
-  // Autoplay when track changes
   useEffect(() => {
     if (audioRef.current) audioRef.current.load();
   }, [currentTrack]);
@@ -45,18 +42,18 @@ export default function Home() {
     <main className="relative w-full min-h-screen">
 
       {/* SECCIÓN 1 */}
-      <section className="w-full min-h-screen bg-[#CCCCCC] flex items-center justify-center p-10">
+      <section className="w-full min-h-screen bg-[#E0E0E0] flex items-center justify-center p-10">
         <Image
           src="/banner.jpg"
           alt="Banner"
-          width={2000}
-          height={800}
-          className="rounded-xl shadow-lg"
+          width={600}
+          height={600}
+          className="rounded-xl shadow-lg w-full max-w-[600px]"
         />
       </section>
 
       {/* SECCIÓN 2 */}
-      <section className="w-full min-h-screen bg-[#B3B3B3] flex flex-col items-center justify-center p-12">
+      <section className="w-full min-h-screen bg-[#C8C8C8] flex flex-col items-center justify-center p-12">
         <h2 className="text-4xl font-bold mb-6">Run4Fun</h2>
         <p className="max-w-2xl text-center text-lg">
           Música sincronizada con tu cadencia real para mejorar tu ritmo y mantener la motivación.
@@ -64,7 +61,7 @@ export default function Home() {
       </section>
 
       {/* SECCIÓN 3 */}
-      <section className="w-full min-h-screen bg-[#CCCCCC] flex flex-col items-center justify-center p-12">
+      <section className="w-full min-h-screen bg-[#B0B0B0] flex flex-col items-center justify-center p-12">
         <h2 className="text-3xl font-bold mb-6">Tracks Disponibles</h2>
 
         <div className="space-y-4 w-full max-w-xl">
@@ -85,7 +82,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 🔥 REPRODUCTOR FLOTANTE DERECHA GLASSMORPHISM */}
+      {/* REPRODUCTOR FLOTANTE DERECHA */}
       <div className="
         fixed top-1/2 right-6 -translate-y-1/2
         backdrop-blur-xl bg-white/20
