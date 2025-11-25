@@ -50,12 +50,6 @@ export default function Home() {
     setIsPlaying(true);
   };
 
-  const skipPrev = () => {
-    setCurrentIndex((i) => (i === 0 ? playlist.length - 1 : i - 1));
-    setTimeout(() => audioRef.current?.play(), 200);
-    setIsPlaying(true);
-  };
-
   return (
     <main className="font-sans text-white">
 
@@ -79,30 +73,6 @@ export default function Home() {
           <p className="text-xl max-w-2xl mx-auto">
             Corre, conecta tu música con tu ritmo y vive la experiencia RunForFun.
           </p>
-        </div>
-      </section>
-
-      {/* RADIO */}
-      <section id="radio" className="py-16 px-6 flex flex-col items-center bg-[#333333CC]">
-        <h2 className="text-3xl font-bold mb-6">🎧 Audios en vivo </h2>
-
-        <div className="flex flex-col items-center p-6 rounded-xl shadow-lg max-w-md w-full bg-black/40 backdrop-blur">
-          <p className="text-lg font-semibold mb-2">{playlist[currentIndex]?.title}</p>
-          <p className="text-sm opacity-70 mb-4">
-            BPM: {playlist[currentIndex]?.bpm} • Cadence: {playlist[currentIndex]?.cadence}
-          </p>
-
-          <audio ref={audioRef} src={playlist[currentIndex]?.url} onEnded={skipNext} />
-
-          <div className="flex gap-6 mt-4">
-            <button onClick={togglePlay} className="p-2">
-              <Image src="/icons/play-pausa.png" alt="Play/Pause" width={50} height={50} />
-            </button>
-
-            <button onClick={skipNext} className="p-2">
-              <Image src="/icons/siguiente.png" alt="Siguiente" width={50} height={50} />
-            </button>
-          </div>
         </div>
       </section>
 
@@ -136,7 +106,7 @@ export default function Home() {
             href="https://object-volt-59393284.figma.site/"
             className="mt-4 inline-block text-green-400 font-semibold underline"
           >
-            Abrir la app"
+            Abrir la app
           </a>
         </div>
       </section>
@@ -155,7 +125,6 @@ export default function Home() {
             <Link href="/archivo.png" target="_blank">
               <Image src="/archivo.png" alt="Archivo 1" width={60} height={60} />
             </Link>
-
             <Link href="/archivo.png" target="_blank">
               <Image src="/archivo.png" alt="Archivo 2" width={60} height={60} />
             </Link>
@@ -171,7 +140,7 @@ export default function Home() {
         </p>
       </footer>
 
-      {/*  🔥 MINI PLAYER FLOTANTE A LA DERECHA */}
+      {/* MINI PLAYER FLOTANTE */}
       <div
         className="
           fixed bottom-6 right-6 z-[9999]
@@ -193,7 +162,6 @@ export default function Home() {
           <button onClick={togglePlay}>
             <Image src="/icons/play-pausa.png" width={28} height={28} alt="play" />
           </button>
-
           <button onClick={skipNext}>
             <Image src="/icons/siguiente.png" width={28} height={28} alt="next" />
           </button>
