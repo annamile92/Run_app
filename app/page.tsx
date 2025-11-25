@@ -140,7 +140,7 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-<footer className="py-8 px-5 text-center bg-gray-800">
+<footer className="py-8 px-5 text-center gap-6 bg-[#3a3a3acc]">
   <Image src="/logo.png" alt="Logo" width={80} height={80} className="mx-auto" />
   <p className="text-sm text-white opacity-80 mt-4">
     © 2025 Run4Fun — Todos los derechos reservados.
