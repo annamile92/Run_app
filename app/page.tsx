@@ -132,7 +132,7 @@ export default function Home() {
         </div>
         <div className="md:w-1/2 text-white flex flex-col gap-4">
           <h2 className="text-3xl font-bold mb-4">Documentos</h2>
-          <p className="opacity-80">Documentos oficiales del proyecto RunForFun.</p>
+          <p className="opacity-80">Documentos investigación del proyecto Run4Fun.</p>
 
           <div className="flex gap-4 mt-4">
             <Link href="/archivo.png" target="_blank">
@@ -149,7 +149,7 @@ export default function Home() {
       <footer className="py-16 px-5 text-center bg-gradient-to-r from-purple-600 to-blue-500">
         <Image src="/logo.png" alt="Logo" width={80} height={80} className="mx-auto" />
         <p className="text-sm opacity-80 mt-4">
-          © 2025 RunForFun — Todos los derechos reservados.
+          © 2025 Run4Fun — Todos los derechos reservados.
         </p>
       </footer>
 
