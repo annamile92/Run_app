@@ -57,7 +57,7 @@ export default function Home() {
 
       {/* SECCIÓN 2 */}
       <section className="w-full min-h-screen bg-[#B3B3B3] flex flex-col items-center justify-center p-12">
-        <h2 className="text-4xl font-bold mb-6">Run For Fun</h2>
+        <h2 className="text-4xl font-bold mb-6">Run4Fun</h2>
         <p className="max-w-2xl text-center text-lg">
           Música sincronizada con tu cadencia real para mejorar tu ritmo y mantener la motivación.
         </p>
