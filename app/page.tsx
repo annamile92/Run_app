@@ -184,7 +184,7 @@ export default function Home() {
       <Image src="/icons/play-pausa.png" width={40} height={40} alt="play" />
     </button>
     <button onClick={skipNext} className="p-2">
-      <Image src="/icons/siguiente.png" width={40} height={40} alt="next" />
+      <Image src="/icons/siguiente.png" width={60} height={60} alt="next" />
     </button>
   </div>
 </div>
