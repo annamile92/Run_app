@@ -115,6 +115,12 @@ export default function Home() {
           >
             Abrir la App
           </a>
+           <a
+            href="https://object-volt-59393284.figma.site/"
+            className="mt-6 inline-block bg-gradient-to-r from-purple-600 to-blue-500 text-black font-semibold px-4 py-2 rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300 text-center"
+          >
+            Ver guía rápida de la App.
+          </a>
         </div>
       </section>
 
