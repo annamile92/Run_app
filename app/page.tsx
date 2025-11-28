@@ -58,15 +58,23 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Menú Móvil */}
-      {menuOpen && (
-        <div className="absolute top-20 right-4 w-48 bg-gradient-to-r from-purple-600 to-blue-500 rounded-xl flex flex-col items-start p-4 gap-3 md:hidden z-50">
-          <Link href="#evento" onClick={() => setMenuOpen(false)} className="hover:text-yellow-400 transition">Intro</Link>
-          <Link href="#app" onClick={() => setMenuOpen(false)} className="hover:text-yellow-400 transition">App</Link>
-          <Link href="#documentos" onClick={() => setMenuOpen(false)} className="hover:text-yellow-400 transition">Documentos</Link>
-          <Link href="/tienda" onClick={() => setMenuOpen(false)} className="hover:text-yellow-400 transition">Shop</Link>
-        </div>
-      )}
+    {/* Menú Móvil */}
+{menuOpen && (
+  <div className="absolute top-20 left-4 w-48 bg-gradient-to-r from-purple-600 to-blue-500 rounded-xl flex flex-col items-start p-4 gap-3 md:hidden z-50">
+    <Link href="#evento" onClick={() => setMenuOpen(false)} className="hover:text-yellow-400 transition">
+      Intro
+    </Link>
+    <Link href="#app" onClick={() => setMenuOpen(false)} className="hover:text-yellow-400 transition">
+      App
+    </Link>
+    <Link href="#documentos" onClick={() => setMenuOpen(false)} className="hover:text-yellow-400 transition">
+      Documentos
+    </Link>
+    <Link href="/tienda" onClick={() => setMenuOpen(false)} className="hover:text-yellow-400 transition">
+      Shop
+    </Link>
+  </div>
+)}
 
       {/* HERO */}
       <section className="relative flex justify-center items-center text-center h-[80vh] md:h-[90vh] mt-20 overflow-hidden bg-[#222]">
