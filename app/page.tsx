@@ -109,7 +109,7 @@ export default function Home() {
       {/* APP */}
       <section id="app" className="py-16 px-6 flex flex-col md:flex-row items-center gap-6 bg-[#3a3a3acc]">
         <div className="md:w-1/2 flex justify-center">
-          <Image src="/2.png" alt="App" width={180} height={180} className="rounded-lg shadow-md" />
+          <Image src="/2.png" alt="App" width={280} height={280} className="rounded-lg shadow-md" />
         </div>
 
         <div className="md:w-1/2 text-white flex flex-col gap-4">
@@ -119,7 +119,7 @@ export default function Home() {
           </p>
 
           <div className="md:w-1/2 flex justify-center">
-            <Image src="/qr-code.png" alt="QR App" width={280} height={280} className="rounded-lg shadow-md" />
+            <Image src="/qr-code.png" alt="QR App" width={180} height={180} className="rounded-lg shadow-md" />
           </div>
 
           <a
