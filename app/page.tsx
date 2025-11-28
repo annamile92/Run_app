@@ -154,7 +154,7 @@ bg-gradient-to-r from-gray-800/80 to-gray-500/60 backdrop-blur-lg z-50">
   rel="noopener noreferrer">
   <Image src="/archivo.png" alt="Archivo 2" width={60} height={60} />
 </a>
-  <a href="https://www.figma.com/deck/O6dXDo8EnfQbRB2ELgYmOw"  target="_blank"
+  <a href="https://https://docs.google.com/document/d/1njwxOMnDwxfFj1u_PMxlRO9qme_zeM7P/edit?usp=sharing&ouid=105576526615677094293&rtpof=true&sd=true"  target="_blank"
   rel="noopener noreferrer">
   <Image src="/archivo.png" alt="Archivo 2" width={60} height={60} />
 </a>
