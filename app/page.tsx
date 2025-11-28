@@ -152,7 +152,7 @@ bg-gradient-to-r from-gray-800/80 to-gray-500/60 backdrop-blur-lg z-50">
             <Link href="/https://www.figma.com/slides/O6dXDo8EnfQbRB2ELgYmOw/Run4Fun?node-id=10-2670&t=nAyfxOpL9BRQVjln-0">
               <Image src="/archivo.png" alt="Archivo 1" width={60} height={60} />
             </Link>
-             <Link href="/https://www.figma.com/slides/O6dXDo8EnfQbRB2ELgYmOw/Run4Fun?node-id=10-2670&t=nAyfxOpL9BRQVjln-0">
+             <Link href="/https://www.figma.com/slides/O6dXDo8EnfQbRB2ELgYmOw/Run4Fun?node-id=10-2670&t=nAyfxOpL9BRQVjln-0 target="_blank">
               <Image src="/archivo.png" alt="Archivo 2" width={60} height={60} />
             </Link>
           </div>
