@@ -39,10 +39,10 @@ export default function Home() {
     <main className="font-sans text-white">
 
       {/* NAVBAR */}
-      <nav className="fixed top-0 w-full flex justify-between items-center p-4 bg-gradient-to-r from-purple-600 to-blue-500/90 backdrop-blur z-50">
-        <div className="flex items-center gap-6">
-          <Image src="/logo.png" alt="Logo" width={60} height={60} />
-        </div>
+     <nav className="fixed top-0 w-full flex justify-between items-center p-4 bg-purple-600/60 backdrop-blur-lg z-50">
+  <div className="flex items-center gap-6">
+    <Image src="/logo.png" alt="Logo" width={60} height={60} />
+  </div>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6">
