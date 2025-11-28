@@ -124,7 +124,7 @@ export default function Home() {
             Explora la experiencia RunForFun App. Puedes descargar la app o escanear el QR.
           </p>
            <div className="md:w-1/2 flex justify-center">
-          <Image src="/qr-code " alt="App" width={280} height={280} className="rounded-lg shadow-md" />
+          <Image src="/qr-code" alt="App" width={280} height={280} className="rounded-lg shadow-md" />
         </div>
           <a
             href="https://object-volt-59393284.figma.site/"
