@@ -123,6 +123,9 @@ export default function Home() {
           <p className="opacity-80 leading-relaxed">
             Explora la experiencia RunForFun App. Puedes descargar la app o escanear el QR.
           </p>
+           <div className="md:w-1/2 flex justify-center">
+          <Image src="/qr-code " alt="App" width={280} height={280} className="rounded-lg shadow-md" />
+        </div>
           <a
             href="https://object-volt-59393284.figma.site/"
             className="mt-6 inline-block bg-gradient-to-r from-purple-600 to-blue-500 text-black font-semibold px-4 py-2 rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300 text-center"
