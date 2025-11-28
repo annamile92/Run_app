@@ -6,9 +6,11 @@ import Image from "next/image";
 
 export default function Home() {
   const initialPlaylist = [
+    
     { id: 1, url: "/radio-tracks/runner_camila_152bpm.wav", title: "Runner - Camila (152 bpm)", bpm: 152, cadence: 152 },
     { id: 2, url: "/radio-tracks/julian_144bpm.wav", title: "Runner - Julián (144 bpm)", bpm: 152, cadence: 152 },
     { id: 3, url: "/radio-tracks/relax_120bpm.wav", title: "Cool Down (120 bpm)", bpm: 152, cadence: 152 },
+     { id: 4, url: "/radio-tracks/coldplay_style_pad", title: "Cool Down (120 bpm)", bpm: 152, cadence: 152 },
   ];
 
   const [playlist] = useState(initialPlaylist);
