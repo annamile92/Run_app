@@ -9,9 +9,9 @@ export default function Home() {
     
     { id: 1, url: "/radio-tracks/runner_camila_152bpm.wav", title: "Runner - Camila (152 bpm)", bpm: 152, cadence: 152 },
     { id: 2, url: "/radio-tracks/julian_144bpm.wav", title: "Runner - Julián (144 bpm)", bpm: 152, cadence: 152 },
-    { id: 3, url: "/radio-tracks/relax_120bpm.wav", title: "Cool Down (120 bpm)", bpm: 152, cadence: 152 },
-     { id: 4, url: "/radio-tracks/coldplay_style_pad", title: "Cool Down (120 bpm)", bpm: 152, cadence: 152 },
- { id: 5, url: "/radio-tracks/chaotic_sprint_172.wav", title: "Cool Down (120 bpm)", bpm: 152, cadence: 152 },
+    { id: 3, url: "/radio-tracks/relax_120bpm.wav", title: "Runner - Maria (120 bpm)", bpm: 152, cadence: 152 },
+     { id: 4, url: "/radio-tracks/coldplay_style_pad", title: "Runner - Jose (120 bpm)", bpm: 152, cadence: 152 },
+ { id: 5, url: "/radio-tracks/chaotic_sprint_172.wav", title: "Runner - Andrea (120 bpm)", bpm: 152, cadence: 152 },
   
   ];
 
