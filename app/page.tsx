@@ -93,8 +93,6 @@ bg-gradient-to-r from-gray-800/80 to-gray-500/60 backdrop-blur-lg z-50">
             Con Run4Fun, cada carrera se convierte en <strong>una experiencia viva y colectiva</strong>.
           </p>
 
-          <a
-
 {/* APP */}
       <section id="app" className="py-16 px-6 flex flex-col md:flex-row items-center gap-6 bg-[#3a3a3acc]">
         <div className="md:w-1/2 flex justify-center">
