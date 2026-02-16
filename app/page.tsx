@@ -12,7 +12,6 @@ export default function Home() {
     { id: 4, url: "/radio-tracks/coldplay_style_pad.wav", title: "Runner - Jose (120 bpm)", bpm: 120, cadence: 152 },
     { id: 5, url: "/radio-tracks/chaotic_sprint_172.wav", title: "Runner - Andrea (172 bpm)", bpm: 172, cadence: 152 },
   ];
-
   const [playlist] = useState(initialPlaylist);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
