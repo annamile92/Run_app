@@ -12,6 +12,7 @@ export default function Home() {
     { id: 4, url: "/radio-tracks/coldplay_style_pad.wav", title: "Runner - Jose (120 bpm)", bpm: 120, cadence: 152 },
     { id: 5, url: "/radio-tracks/chaotic_sprint_172.wav", title: "Runner - Andrea (172 bpm)", bpm: 172, cadence: 152 },
   ];
+
   const [playlist] = useState(initialPlaylist);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -38,17 +39,16 @@ export default function Home() {
     <main className="font-sans text-white">
 
       {/* NAVBAR */}
-   <nav className="fixed top-0 w-full flex justify-between items-center p-4 
-bg-gradient-to-r from-gray-800/80 to-gray-500/60 backdrop-blur-lg z-50">
-  <div className="flex items-center gap-6">
-    <Image src="/logo.png" alt="Logo" width={60} height={60} />
-  </div>
+      <nav className="fixed top-0 w-full flex justify-between items-center p-4 
+      bg-gradient-to-r from-gray-800/80 to-gray-500/60 backdrop-blur-lg z-50">
+        <div className="flex items-center gap-6">
+          <Image src="/logo.png" alt="Logo" width={60} height={60} />
+        </div>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6">
           <Link href="#evento" className="hover:text-yellow-400 transition">Intro</Link>
           <Link href="#app" className="hover:text-yellow-400 transition">App</Link>
-          <Link href="#documentos" className="hover:text-yellow-400 transition">Documentos</Link>
           <Link href="/tienda" className="hover:text-yellow-400 transition">Shop</Link>
         </div>
 
@@ -56,7 +56,12 @@ bg-gradient-to-r from-gray-800/80 to-gray-500/60 backdrop-blur-lg z-50">
         <div className="md:hidden">
           <button onClick={() => setMenuOpen(!menuOpen)}>
             <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={menuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d={menuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+              />
             </svg>
           </button>
         </div>
@@ -67,7 +72,6 @@ bg-gradient-to-r from-gray-800/80 to-gray-500/60 backdrop-blur-lg z-50">
         <div className="absolute top-20 left-4 w-48 bg-gradient-to-r from-purple-600 to-blue-500 rounded-xl flex flex-col items-start p-4 gap-3 md:hidden z-50">
           <Link href="#evento" onClick={() => setMenuOpen(false)} className="hover:text-yellow-400 transition">Intro</Link>
           <Link href="#app" onClick={() => setMenuOpen(false)} className="hover:text-yellow-400 transition">App</Link>
-          <Link href="#documentos" onClick={() => setMenuOpen(false)} className="hover:text-yellow-400 transition">Documentos</Link>
           <Link href="/tienda" onClick={() => setMenuOpen(false)} className="hover:text-yellow-400 transition">Shop</Link>
         </div>
       )}
@@ -77,7 +81,9 @@ bg-gradient-to-r from-gray-800/80 to-gray-500/60 backdrop-blur-lg z-50">
         <Image src="/banner-run.gif" alt="Corredores" fill className="object-cover object-center" />
         <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
         <div className="relative z-10 px-6">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-4">Corre, vibra y conecta</h1>
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-4">
+            Corre, vibra y conecta
+          </h1>
         </div>
       </section>
 
@@ -86,15 +92,14 @@ bg-gradient-to-r from-gray-800/80 to-gray-500/60 backdrop-blur-lg z-50">
         <div className="md:w-1/2 flex justify-center">
           <Image src="/1.png" alt="Evento" width={280} height={280} className="rounded-lg shadow-md" />
         </div>
-        <div className="md:w-1/2 text-white flex flex-col gap-4">
+
+        <div className="md:w-1/2 flex flex-col gap-4">
           <h2 className="text-3xl font-bold mb-4">
             ¿Estás listo para experimentar una experiencia de conexión con otros?
           </h2>
-          <p className="opacity-80 leading-relaxed">
-            En Medellín, correr ya no es solo un deporte: es <strong>una experiencia que conecta, motiva y une</strong>.
-          </p>
-          <p className="opacity-80 leading-relaxed">
-            Con Run4Fun, cada carrera se convierte en <strong>una experiencia viva y colectiva</strong>.
+
+          <p className="opacity-80">
+            En Medellín, correr ya no es solo un deporte: es una experiencia que conecta, motiva y une.
           </p>
 
           <a
@@ -112,15 +117,14 @@ bg-gradient-to-r from-gray-800/80 to-gray-500/60 backdrop-blur-lg z-50">
           <Image src="/2.png" alt="App" width={280} height={280} className="rounded-lg shadow-md" />
         </div>
 
-        <div className="md:w-1/2 text-white flex flex-col gap-4">
+        <div className="md:w-1/2 flex flex-col gap-4">
           <h2 className="text-3xl font-bold mb-4">App</h2>
-          <p className="opacity-80 leading-relaxed">
+
+          <p className="opacity-80">
             Explora la experiencia RunForFun App. Puedes descargar la app o escanear el QR.
           </p>
 
-          <div className="md:w-1/2 flex justify-center">
-            <Image src="/qr-code.png" alt="QR App" width={180} height={180} className="rounded-lg shadow-md" />
-          </div>
+          <Image src="/qr-code.png" alt="QR App" width={180} height={180} className="rounded-lg shadow-md" />
 
           <a
             href="https://object-volt-59393284.figma.site/"
@@ -128,39 +132,31 @@ bg-gradient-to-r from-gray-800/80 to-gray-500/60 backdrop-blur-lg z-50">
           >
             Abrir la App
           </a>
-
-          <a
-            href="https://drive.google.com/file/d/1STnB_5VTdk8dQPUIFFvNehr3sJ-Hu47m/view"
-            className="mt-3 inline-block bg-gradient-to-r from-purple-600 to-blue-500 text-black font-semibold px-4 py-2 rounded-xl shadow-lg hover:scale-105 transition-all"
-          >
-            Ver guía rápida de la App
-          </a>
         </div>
       </section>
-
-    
 
       {/* FOOTER */}
       <footer className="py-8 px-5 text-center bg-[#3a3a3acc]">
         <Image src="/logo.png" alt="Logo" width={80} height={80} className="mx-auto" />
-        <p className="text-sm text-white opacity-80 mt-4">
+        <p className="text-sm opacity-80 mt-4">
           © 2025 Run4Fun — Todos los derechos reservados.
         </p>
       </footer>
 
       {/* MINI PLAYER */}
       <div className="fixed top-[95px] right-6 z-[9999] w-72 px-4 py-2 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl flex items-center justify-between">
-        <div className="flex flex-col">
-          <span className="text-sm font-semibold text-white">{playlist[currentIndex].title}</span>
-          <span className="text-xs text-white/70">
+        <div>
+          <span className="text-sm font-semibold">{playlist[currentIndex].title}</span>
+          <span className="text-xs opacity-70 block">
             {playlist[currentIndex].bpm} BPM · {playlist[currentIndex].cadence} Cad
           </span>
         </div>
-        <div className="flex items-center gap-3">
-          <button onClick={togglePlay} className="p-1">
+
+        <div className="flex gap-3">
+          <button onClick={togglePlay}>
             <Image src="/icons/play-pausa.png" width={40} height={40} alt="play" />
           </button>
-          <button onClick={skipNext} className="p-1">
+          <button onClick={skipNext}>
             <Image src="/icons/siguiente.png" width={40} height={40} alt="next" />
           </button>
         </div>
