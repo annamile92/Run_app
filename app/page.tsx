@@ -151,7 +151,6 @@ export default function Home() {
             {playlist[currentIndex].bpm} BPM · {playlist[currentIndex].cadence} Cad
           </span>
         </div>
-
         <div className="flex gap-3">
           <button onClick={togglePlay}>
             <Image src="/icons/play-pausa.png" width={40} height={40} alt="play" />
@@ -161,7 +160,6 @@ export default function Home() {
           </button>
         </div>
       </div>
-
       <audio ref={audioRef} src={playlist[currentIndex].url} onEnded={skipNext} />
     </main>
   );
