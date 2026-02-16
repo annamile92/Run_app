@@ -125,9 +125,6 @@ bg-gradient-to-r from-gray-800/80 to-gray-500/60 backdrop-blur-lg z-50">
           </a>
         </div>
       </section>
-{/* DOCUMENTOS */}
-      <section>
-      </section>
 {/* FOOTER */}
       <footer className="py-8 px-5 text-center bg-[#3a3a3acc]">
         <Image src="/logo.png" alt="Logo" width={80} height={80} className="mx-auto" />
