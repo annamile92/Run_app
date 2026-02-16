@@ -39,7 +39,7 @@ export default function Home() {
 
   return (
     <main className="font-sans text-white">
-      {/* NAVBAR */}
+    
       <nav className="fixed top-0 w-full flex justify-between items-center p-4 bg-gradient-to-r from-gray-800/80 to-gray-500/60 backdrop-blur-lg z-50">
         <Image src="/logo.png" alt="Logo" width={60} height={60} />
 
@@ -61,28 +61,28 @@ export default function Home() {
         </div>
       )}
 
-      {/* HERO */}
+   
       <section className="relative h-[80vh] mt-20">
         <Image src="/banner-run.gif" alt="Hero" fill className="object-cover" />
       </section>
 
-      {/* EVENTO */}
+    
       <section id="evento" className="py-16 px-6 bg-[#2e2e2ecc]">
         <h2 className="text-3xl font-bold">Corre, vibra y conecta</h2>
       </section>
 
-      {/* APP */}
+      
       <section id="app" className="py-16 px-6 bg-[#3a3a3acc]">
         <h2 className="text-3xl font-bold mb-4">App</h2>
         <Image src="/qr-code.png" alt="QR" width={180} height={180} />
       </section>
 
-      {/* FOOTER */}
+  
       <footer className="py-8 text-center bg-[#3a3a3acc]">
         <p>© 2025 Run4Fun</p>
       </footer>
 
-      {/* MINI PLAYER */}
+   
       <div className="fixed top-[95px] right-6 w-72 p-4 bg-white/10 backdrop-blur-xl rounded-2xl">
         <p className="font-semibold">{playlist[currentIndex].title}</p>
         <p className="text-sm opacity-70">
