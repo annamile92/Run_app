@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function Home() {
-  const initialPlaylist = [
+  const playlist = [
     { id: 1, url: "/radio-tracks/runner_camila_152bpm.wav", title: "Runner - Camila (152 bpm)", bpm: 152, cadence: 152 },
     { id: 2, url: "/radio-tracks/julian_144bpm.wav", title: "Runner - Julián (144 bpm)", bpm: 144, cadence: 152 },
     { id: 3, url: "/radio-tracks/relax_120bpm.wav", title: "Runner - Maria (120 bpm)", bpm: 120, cadence: 152 },
@@ -13,11 +13,10 @@ export default function Home() {
     { id: 5, url: "/radio-tracks/chaotic_sprint_172.wav", title: "Runner - Andrea (172 bpm)", bpm: 172, cadence: 152 },
   ];
 
-  const [playlist] = useState(initialPlaylist);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const audioRef = useRef<HTMLAudioElement>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const togglePlay = () => {
     const audio = audioRef.current;
@@ -104,6 +103,8 @@ export default function Home() {
 
           <a
             href="https://drive.google.com/file/d/1zuUgkeYhA3zltWYRz0qOq91jwr4s2o6r/view"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-6 inline-block bg-gradient-to-r from-purple-600 to-blue-500 text-black font-semibold px-4 py-2 rounded-xl shadow-lg hover:scale-105 transition-all"
           >
             Ver Evento
@@ -128,6 +129,8 @@ export default function Home() {
 
           <a
             href="https://object-volt-59393284.figma.site/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-6 inline-block bg-gradient-to-r from-purple-600 to-blue-500 text-black font-semibold px-4 py-2 rounded-xl shadow-lg hover:scale-105 transition-all"
           >
             Abrir la App
@@ -160,6 +163,7 @@ export default function Home() {
           </button>
         </div>
       </div>
+
       <audio ref={audioRef} src={playlist[currentIndex].url} onEnded={skipNext} />
     </main>
   );
